@@ -134,7 +134,7 @@ more permanent form of storage than GitHub. It is easy to archive a particular
 commit of a repository which is good practice if you want to refer to a
 particular version of some code in a paper.
 
-* TODO Worked example
+* Worked example
 
 Now that we have an understanding of version control and its associated tooling,
 we can see an example of how this enables us to do more reproducible research.
@@ -271,21 +271,101 @@ steps:
    by clicking on *Add file* and selecting *Create new file*. Note that for
    =git-usage.png= you will need to use *Upload file* instead of *Create new file*.
 
-** TODO Adding a license and a README
+** Adding a license
 
-1. You get told you need to change something so you do that
-   + You need to make a change and push that change
-2. You might want to archive this on zenodo or something similar
+A license specifies what people can do with your code. If you aren't sure what
+license suits your needs, you might find [[https://choosealicense.com/]] has some
+helpeful information. Most of the time, I will opt for the MIT license.
 
-** TODO Recording the session information
+There are two ways you might add a license. The manual method is to copy and
+paste the license text into a file called =LICENSE= to your repository, filling in
+=[year]= and =[fullname]= as appropriate. Alternatively, you can *Add file* and *Create
+new file* and specify that the file will be called "LICENSE" and it will offer
+you some templates to choose from. It will autofill the details of your name and
+the year.
 
-- You need to record the environment you used to carry out the computation in case someone wants to recreate it exactly
+** Adding a README
+
+When you encounter a repository online it can be difficult to understand what
+its purpose is and how to use it. "README" is the name given to a file that
+contains this sort of information. Typically these will be written in markdown
+(similar to RMarkdown). Add a file called =README.md= to your repository with text
+similar to the following.
+
+#+begin_src markdown
+  This repository contains an analysis of git usage through time.
+
+  To run this analysis use the following command:
+
+  ```
+  Rscript src/make-plot.R
+  ```
+
+  The input data is in `data` and the results are in `out`.
+#+end_src
+
+** Recording the session information
+
+Software gets updated, and sometimes these updates cause things to break. Where
+possible, it is very good practise to include details of the versions of
+software you have used. When working with R the =sessionInfo= command makes this
+simple. Try adding the following to the end of the =make-plot.R= script.
+
+#+begin_src R
+  sink(file = "out/package-versions.txt")
+  sessionInfo()
+  sink()
+#+end_src
+
+The next time that you run this script, it will write a description of the
+version of R you used and the versions of all the loaded packages to the file
+=out/package-versions.txt=. Try running the script again to make sure this
+additional file was generated and contains something similar to the following.
+
+#+begin_example
+R version 4.1.2 (2021-11-01)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.3 LTS
+
+Matrix products: default
+BLAS:   /usr/local/lib/R/lib/libRblas.so
+LAPACK: /usr/local/lib/R/lib/libRlapack.so
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+other attached packages:
+[1] ggplot2_3.3.5
+
+loaded via a namespace (and not attached):
+ [1] magrittr_2.0.1   splines_4.1.2    tidyselect_1.1.1 munsell_0.5.0
+ [5] colorspace_2.0-2 lattice_0.20-45  R6_2.5.1         rlang_0.4.12
+ [9] fansi_0.5.0      dplyr_1.0.7      tools_4.1.2      grid_4.1.2
+[13] gtable_0.3.0     nlme_3.1-153     mgcv_1.8-38      utf8_1.2.2
+[17] withr_2.4.3      ellipsis_0.3.2   digest_0.6.29    tibble_3.1.6
+[21] lifecycle_1.0.1  crayon_1.4.2     Matrix_1.3-4     farver_2.1.0
+[25] purrr_0.3.4      vctrs_0.3.8      glue_1.6.0       labeling_0.4.2
+[29] compiler_4.1.2   pillar_1.6.4     generics_0.1.1   scales_1.1.1
+[33] pkgconfig_2.0.3
+#+end_example
+
+Once you are happy that this has worked, we need to commit these changes. First
+by editing the script, and second, add the =package-versions.txt= file.
 
 * TODO Next steps and alternative solutions
 
-- You need to know where you can learn more about git
-- You need to know what tools are used for what purposes
-- You need to know how to navigate GitHub including the issue tracker and assess liveliness
++ You might want to archive this on zenodo or something similar
++ You need to know where you can learn more about git
++ You need to know what tools are used for what purposes
++ You need to know how to navigate GitHub including the issue tracker and assess liveliness
 
 * TODO Homework
 
