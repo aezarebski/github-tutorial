@@ -96,9 +96,16 @@ including the changes on someone's branch is called /merging/ the changes.
 When you make a copy of a repository that sits on your GitHub account. This is
 similar to, but distinct from [[*Clone][cloning]] and making a [[*Branch][branch]].
 
-** TODO GitHub
+** GitHub
 
-*** TODO What is GitHub?
+*** What is GitHub?
+
+GitHub, Inc. is a subsidairy of Microsoft. Their website provides freemium
+hosting of git repositories. In addition to hosting the repositories, it offers
+additional tools to assist with software development. We will make extensive use
+of GitHub in this tutorial to avoid you needing to install anything on your
+machine. If you are going to use git extensively, it would be wise to learn how
+to do this from the command line or some other program.
 
 *** Setting up a GitHub account
 
