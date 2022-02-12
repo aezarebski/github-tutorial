@@ -1,0 +1,108 @@
+#+title: Git, GitHub and Reproducible Research
+#+author: Alexander E. Zarebski
+
+* TODO Background material
+
+** Disclaimer
+
+These materials makes use of proprietary products and a simplified workflow in
+order to emphasise the main concepts and to save on installation and
+configuration time. Some references will be given at the end to direct you to
+free and open source solutions and more sustainable workflows; the core ideas
+are the same though.
+
+** TODO Version control (VC)
+
+*** TODO Reproducible research and Open research
+
+** TODO git
+
+*** TODO Repository
+
+*** TODO Clone
+
+*** TODO Pull
+
+*** TODO Commit
+
+*** TODO Push
+
+*** TODO Fork
+
+*** TODO Branch (beyond scope)
+
+*** TODO Merge (beyond scope)
+
+** TODO GitHub
+
+*** TODO What is GitHub?
+
+*** Setting up a GitHub account
+
+To register an account you will need an email address that can be used for
+verification.
+
+1. Visit [[https://github.com/]] and click *Sign Up*.
+2. Fill in the forms to create an account.
+3. Verify that account by entering the access code GitHub sends to the email
+   address you registered with.
+4. Verify that you can summon the *Command Palette* with =crtl k= for Windows and
+   Linux and =command k= on a mac.
+5. The appearance and accessibility settings can be reached by searching for
+   them in the command palette.
+
+** TODO Zenodo
+
+* TODO Worked example
+
+- You start with some code that generates the pictures needed for a manuscript.
+  + Start with some dummy data and a single figure that can be put into a dummy document
+  + There is a data file and a final figure and a script that makes for later from the former using R.
+  + You want to put that onto github so that others can use it, you want others to be able to build off of it
+- You start by setting up the materials in a way that are good for this purpose.
+  + You need to put a license on this
+  + You need to put a readme so people know what it is all about
+  + You need to have a sensible layout of the materials
+  + You need to record the environment you used to carry out the computation in case someone wants to recreate it exactly
+- You make a github account and repository
+  + You need to set up an account
+  + You need to set up all the access for your machine
+  + You make a repository
+- You upload it all to github
+  + You need to make a copy of this on your machine
+  + You need to move all of your materials into that reposotiry
+  + You need to push the changes to github
+- You get told you need to change something so you do that
+  + You need to make a change and push that change
+- You might want to archive this on zenodo or something similar
+
+* TODO Next steps and alternative solutions
+
+- You need to know where you can learn more about git
+- You need to know what tools are used for what purposes
+- You need to know how to navigate github including the issue tracker and assess liveliness
+
+* TODO Homework
+
+** Question 1
+
+- Explain (in 100--200 words) the purpose of git, github, and zenodo and the
+  relationship between these things.
+- Find and report an alternative to each of these tools (<150 words).
+
+** Question 2
+
+- Explain (in 100--200 words) the role of version control in reproducible
+  research.
+- Give an example (in <150 words) of a situation in which version control
+  does not suffice to make a piece of work reproducible.
+
+** Question 3
+
+- Download the following script and data and organise this material in a
+  repository in a suitable way.
+- Give a brief overview of the decisions you made along the way (<200 words).
+
+** TODO Question 4
+
+** TODO Question 5
