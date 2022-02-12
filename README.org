@@ -106,21 +106,31 @@ verification.
 
 - Explain (in 100--200 words) the purpose of git, github, and zenodo and the
   relationship between these things.
-- Find and report an alternative to each of these tools (<150 words).
+- Find and report an alternative to each of these tools (50--150 words).
 
 ** Question 2
 
 - Explain (in 100--200 words) the role of version control in reproducible
   research.
-- Give an example (in <150 words) of a situation in which version control
+- Give an example (in 100--150 words) of a situation in which version control
   does not suffice to make a piece of work reproducible.
 
 ** Question 3
 
 - Download the following script and data and organise this material in a
   repository in a suitable way.
-- Give a brief overview of the decisions you made along the way (<200 words).
+- Give a brief overview of the decisions you made along the way (100--200
+  words).
 
 ** TODO Question 4
 
-** TODO Question 5
+- Fork the repository at *XXX* and merge the pull request. Note that this will
+  require resolving conflicts in a sensible way.
+- Give a brief overview of the decisions you made along the way (100--150
+  words).
+
+** Question 5
+
+- Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]]
+  and (in 200--300 words) give a brief explanation of how git and GitHub would
+  or would not be relevant to each rule.
