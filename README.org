@@ -33,23 +33,68 @@ described in such a way that others can replicate your results. For it to be
 available for others. Simply dumping all of your code into something like GitHub
 is not sufficient for your research to be considered reproducible.
 
-** TODO git
+** Git
 
-*** TODO Repository
+Created in 2005 by Linus Torvalds to help with the development of the Linux
+kernel, git has become a fundamental tool in software development. In the 2021
+Stackoverflow Developer Survey over \(90\%\) of respondents used git; it is
+nearly synonymous with version control. If you intend to collaborate in the
+writing of substantial amounts of code, taking the time to learn how to use git
+is a good idea.
 
-*** TODO Clone
+Working through the practical example below will be much easier if we get
+familiar with some of the git terminology first. Unless you are familiar with
+git already, you should at least skim these before continuing.
 
-*** TODO Pull
+*** Repository
 
-*** TODO Commit
+A /repository/ is a directory containing your files and the history of all the
+edits (see [[*Commit][commit]]) made to these files. You can have a repository that only
+lives on your machine, but they are often shared on a platform such as GitHub.
 
-*** TODO Push
+*** Commit
 
-*** TODO Fork
+An edit to a file that you have recorded as part of the history of edits is
+called a /commit/. It is both a noun and a verb, you commit an edit and the
+[[*Repository][repository]] contains all of your commits. This can be thought of as a stronger
+version of saving a file.
 
-*** TODO Branch (beyond scope)
+*** Clone
 
-*** TODO Merge (beyond scope)
+When you make a copy of a [[*Repository][repository]] you are /cloning/ that repository. The
+resulting copy is referred to as a /clone/. Typically this will mean you have
+downloaded a copy from a platform such as GitHub.
+
+*** Pull
+
+Suppose you [[*Clone][cloned]] a repository a while ago and you want to get a copy of all
+the [[*Commit][commits]] that have been made to the original repository since then. To get
+these commits you /pull/ them, which is a fancy way of saying updating your files.
+This is sometimes referred to as /fetching/.
+
+*** Push
+
+If you have [[*Commit][commited]] some changes to your [[*Clone][clone]] of a [[*Repository][repository]] and want the
+original repository to have these changes made, you /push/ these changes. This is
+a fancy way of saying use your edits to update the original files.
+
+*** Branch (beyond scope)
+
+A /branch/ is similar to a [[*Clone][clone]] in that it is a copy of a [[*Repository][repository]]. This
+provides a more sophisticated way for people to work on their own version of
+code, without messing up the main copy. This is not particularly important
+unless you are collaborating with others on a project.
+
+*** Merge (beyond scope)
+
+If someone has made some useful changes on their [[*Branch (beyond scope)][branch]], the owner of the
+repository may decide to include their commits in the main copy. This process of
+including the changes on someone's branch is called /merging/ the changes.
+
+*** Fork (beyond scope)
+
+When you make a copy of a repository that sits on your GitHub account. This is
+similar to, but distinct from [[*Clone][cloning]] and making a [[*Branch][branch]].
 
 ** TODO GitHub
 
