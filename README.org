@@ -121,7 +121,13 @@ verification.
 5. The appearance and accessibility settings can be reached by searching for
    them in the command palette.
 
-** TODO Zenodo
+** Zenodo
+
+Zenodo is an open access archive operated by CERN which allows researchers to
+archive research materials with a DOI which makes them easier to cite. This is a
+more permanent form of storage than GitHub. It is easy to archive a particular
+commit of a repository which is good practice if you want to refer to a
+particular version of some code in a paper.
 
 * TODO Worked example
 
