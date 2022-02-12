@@ -1,7 +1,7 @@
 #+title: Git, GitHub and Reproducible Research
 #+author: Alexander E. Zarebski
 
-* TODO Background material
+* Background material
 
 This section provides some context for why you might care about git, GitHub and
 reproducible research. This document only provides the absolute basics of these
@@ -141,11 +141,13 @@ we can see an example of how this enables us to do more reproducible research.
 Suppose that you wanted to include Figure [[fig:demo-result]] in a manuscript and
 you wanted to ensure your analysis reproducible.
 
-#+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line.
+#+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line, the trend is not significant at \(95\%\).
 #+name: fig:demo-result
 #+attr_org: :width 500px
 #+attr_html: :width 400px
 [[./git-usage.png]]
+
+** Code and data
 
 The data and the code that generated this figure are included below. The data is saved in a file =stackoverflow-git-data.csv=.
 
@@ -182,38 +184,102 @@ The code is saved in a file =make-plot.R=
 
   ggsave(filename = "git-usage.png",
          plot = g,
-         height = 7.4, width = 10.5,
+         height = 7.4,
+         width = 10.5,
          units = "cm")
+
+  sink(file = "regression-summary.txt")
+  summary(lm(percentage ~ year, data = sods_data))
+  sink()
 #+end_src
 
-** TODO Organising the data and code
+If we put these into a directory called =git-usage= we end up with the following
 
-- You start with some code that generates the pictures needed for a manuscript.
-  + Start with some dummy data and a single figure that can be put into a dummy document
-  + There is a data file and a final figure and a script that makes for later from the former using R.
-  + You want to put that onto GitHub so that others can use it, you want others to be able to build off of it
+#+begin_example
+git-usage
+├── git-usage.png
+├── make-plot.R
+├── regression-summary.txt
+└── stackoverflow-git-data.csv
+#+end_example
 
-** TODO Additional information
+Copy the code and data into a suitable place on your machine and run the R
+script to ensure that it works. In this worked example we will go through
+cleaning this up so it is easier for people (including ourselves) to make sense
+of this.
 
-- You start by setting up the materials in a way that are good for this purpose.
-  + You need to put a license on this
-  + You need to put a README so people know what it is all about
-  + You need to have a sensible layout of the materials
-  + You need to record the environment you used to carry out the computation in case someone wants to recreate it exactly
+** Organising the data and code
 
-** TODO Uploading to GitHub
+As a first step we will use directories to impose a bit of structure. Organising
+our files in this way is useful as it makes it far easier for someone to
+understand the purpose of each of the files. Follow the following steps to
+organise your code more appropriately.
 
-- You make a GitHub account and repository
-  + You need to set up an account
-  + You need to set up all the access for your machine
-  + You make a repository
-- You upload it all to GitHub
-  + You need to make a copy of this on your machine
-  + You need to move all of your materials into that reposotiry
-  + You need to push the changes to GitHub
-- You get told you need to change something so you do that
-  + You need to make a change and push that change
-- You might want to archive this on zenodo or something similar
+1. Make a directory called =src= and move =make-plot.R= there.
+2. Make a directory called =data= and move =stackoverflow-git-data.csv= there.
+3. Make a directory called =out= which we will write results to.
+4. Fix the call to =read.csv= so it can find the CSV.
+5. Fix the calls to =ggsave= and =sink= so it writes the output into =out=.
+
+Once you have done this, the R script should look like the following.
+
+#+begin_src R
+  sods_data <- read.csv("data/stackoverflow-git-data.csv")
+
+  ...
+
+  ggsave(filename = "out/git-usage.png",
+         plot = g,
+         height = 7.4,
+         width = 10.5,
+         units = "cm")
+
+  sink(file = "out/regression-summary.txt")
+  summary(lm(percentage ~ year, data = sods_data))
+  sink()
+#+end_src
+
+After you have run the code, the directory structure should look like the
+following.
+
+#+begin_example
+git-usage
+├── data
+│   └── stackoverflow-git-data.csv
+├── out
+│   ├── git-usage.png
+│   └── regression-summary.txt
+└── src
+    └── make-plot.R
+#+end_example
+
+** Uploading to GitHub
+
+Now that our code is in a reasonable state, we can upload it to GitHub. If you
+do not already have a GitHub account, please follow the instructions [[*Setting up a GitHub account][above]],
+which describe how to make one. Once you have done this, follow the following
+steps:
+
+1. Visit [[https://github.com/]] and create a new repository by clicking *New*, you
+   will need to pick a name for the repository (I called mine =git-usage=.) The
+   default settings are fine. Click *Create repository*.
+2. Click *creating a new file* to start the process of adding =src/make-plot.R=.
+   1. Ensure the name of the file is =git-usage/src/make-plot.R=.
+   2. Copy-and-paste the code in =make-plot.R= into the editor.
+   3. Click *Commit new file*.
+3. Repeat this process with =data/stackoverflow-git-data.csv= and the output files
+   by clicking on *Add file* and selecting *Create new file*. Note that for
+   =git-usage.png= you will need to use *Upload file* instead of *Create new file*.
+
+** TODO Adding a license and a README
+
+1. You get told you need to change something so you do that
+   + You need to make a change and push that change
+2. You might want to archive this on zenodo or something similar
+
+** TODO Recording the session information
+
+- You need to record the environment you used to carry out the computation in case someone wants to recreate it exactly
 
 * TODO Next steps and alternative solutions
 
