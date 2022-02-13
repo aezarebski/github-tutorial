@@ -1,5 +1,6 @@
 #+title: Git, GitHub and Reproducible Research
 #+author: Alexander E. Zarebski
+#+options: num:2 toc:2
 
 * Background material
 
@@ -46,9 +47,9 @@ nearly synonymous with version control. If you intend to collaborate in the
 writing of substantial amounts of code, taking the time to learn how to use git
 is a good idea.
 
-Working through the practical example below will be much easier if we get
-familiar with some of the git terminology first. Unless you are familiar with
-git already, you should at least skim these before continuing.
+Working with git will be much easier if you get familiar with some of the
+terminology first. Unless you are familiar with git already, you should at least
+skim these before continuing.
 
 *** Repository
 
@@ -138,14 +139,14 @@ particular version of some code in a paper.
 
 Now that we have an understanding of version control and its associated tooling,
 we can see an example of how this enables us to do more reproducible research.
-Suppose that you wanted to include Figure [[fig:demo-result]] in a manuscript and
+Suppose that you wanted to include Figure [[fig:demo-result-1]] in a manuscript and
 you wanted to ensure your analysis reproducible.
 
 #+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line, the trend is not significant at \(95\%\).
-#+name: fig:demo-result
+#+name: fig:demo-result-1
 #+attr_org: :width 500px
 #+attr_html: :width 400px
-[[./git-usage.png]]
+[[./git-usage-1.png]]
 
 ** Code and data
 
@@ -360,12 +361,129 @@ loaded via a namespace (and not attached):
 Once you are happy that this has worked, we need to commit these changes. First
 by editing the script, and second, add the =package-versions.txt= file.
 
+** Branching and merging
+
+Suppose that after doing all of this one of your collaborators wants to adjust
+the figure. We will now go through the steps involved with doing this using
+branches.
+
+*** Branching to make changes
+
+Figure [[fig:demo-result-2]] is a modification of Figure [[fig:demo-result-1]] with the
+desired changes.
+
+#+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a grey line, the trend is not significant at \(95\%\).
+#+name: fig:demo-result-2
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./git-usage-2.png]]
+
+To avoid making changes to the main copy of the code we will work on a [[*Branch][branch]],
+and then when we are happy with the changes we will [[*Merge][merge]] them. To start with,
+create a new branch by clicking on the drop-down menu labelled "main" as shown
+in Figure [[fig:create-new-branch]]. I called it "edit-plot", but you can use
+anything other than "main" (because that is the default branch name used by
+GitHub).
+
+#+caption: Create a new branch using the drop-down menu.
+#+name: fig:create-new-branch
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./create-new-branch.png]]
+
+*** Make desired edits to the code and output
+
+_Making sure that you are on your branch_ --- if you're not sure, click on the
+*branch* button to double check --- edit the =make-plot.R= script so that it has the
+following
+
+#+begin_src R
+  g <- ggplot(
+    data = sods_data,
+    mapping = aes(x = year, y = percentage)) +
+    geom_point() +
+    geom_smooth(method = "lm", colour = "darkgrey") +
+    geom_text(
+      aes(x = 2020, y = 82.8, label = "only GitHub"),
+      size = 3,
+      nudge_x = 0.2,
+      nudge_y = -6) +
+    labs(
+      x = "Year",
+      y = "Percentage who used git") +
+    ylim(c(0,100)) +
+    theme_bw()
+#+end_src
+
+Once you have made the changes and re-run that script the figure in
+=git-usage.png= will have changed --- it should look like Figure [[fig:demo-result-2]]
+now. Ordinarily, you would update the figure in the same way that you update
+code, by commiting the changes. However, this is tricky to do via the GitHub
+website for image files, so instead, delete the file and upload the modified
+one. At this point it might be interesting to move between the =main= branch and
+your new branch to see how the files change between the two.
+
+One motivation for branches is that you can make exploratory changes without
+risking messing up your code on the main branch. If you have a collaborator that
+wanted to try something, they could do so on a separate branch and then, if you
+like their edits, you can [[*Merge][merge]] them into =main= as we are about to do now.
+
+*** Merge the changes
+
+To [[*Merge][merge]] your changes via the website, go back to the main page of the
+repository and you should see a new button, like the one shown in Figure
+[[fig:pull-request]], inviting you to compare the changes on this branch, ie to
+inspect if you consider this work worthy of inclusion.
+
+#+caption: A button appears to invite you to compare branches.
+#+name: fig:pull-request
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./pull-request.png]]
+
+Inspect the differences between the branches and if you are happy with them
+create a pull request by clicking the button as shown in Figure
+[[fig:create-pull-request]].
+
+#+caption: If you are happy with the content of a branch, you can create a pull request.
+#+name: fig:create-pull-request
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./create-pull-request.png]]
+
+Once you have created the pull request, the next step is to [[*Merge][merge]] that branch
+into the =main= branch. To do this you just need to click the button shown in
+Figure [[fig:merge-pull-request]].
+
+#+caption: If you accept a pull request you can merge the changes with the Merge pull request button.
+#+name: fig:merge-pull-request
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./merge-pull-request.png]]
+
+Once a branch has been merged it will hang around until you delete it. Since
+having old branches around can lead to confusion, it is sensible to delete them
+afterwards. As shown in Figure [[fig:delete-branch]] there is a button to achieve
+this.
+
+#+caption: Here is a caption.
+#+name: fig:delete-branch
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./delete-branch.png]]
+
+At this point you should only have a single branch left and it should have the
+modifications to the figure. Congratulations on a reproducible analysis!
+
 * TODO Next steps and alternative solutions
 
 + You might want to archive this on zenodo or something similar
 + You need to know where you can learn more about git
 + You need to know what tools are used for what purposes
 + You need to know how to navigate GitHub including the issue tracker and assess liveliness
+
+- [[https://youtu.be/bSA91XTzeuA][Inside the Hidden Git Folder - Computerphile]] gives a bit of a behind the
+  scenes tour of how git works.
 
 * TODO Homework
 
