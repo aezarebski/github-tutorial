@@ -2,35 +2,36 @@
 #+author: Alexander E. Zarebski
 #+options: num:2 toc:2
 
+* Disclaimer
+
+These materials makes use of proprietary products and a simplified workflow in
+order to emphasise the main concepts and to save on installation and
+configuration time. Some references will be given at the end to direct you to
+free and open source solutions and more sustainable workflows; the core ideas
+are the same though so learning the material here should make it easier to
+migrate to more sensible methods in the future should the need arise.
+
 * Background material
 
 This section provides some context for why you might care about git, GitHub and
 reproducible research. This document only provides the absolute basics of these
 topics but should get you started with them and help direct further learning.
 
-** Disclaimer
+** Version control
 
-These materials makes use of proprietary products and a simplified workflow in
-order to emphasise the main concepts and to save on installation and
-configuration time. Some references will be given at the end to direct you to
-free and open source solutions and more sustainable workflows; the core ideas
-are the same though.
-
-** Version control (VC)
-
-/Version control/ (VC) refers to systems which help to manage the writing and
+/Version control/ refers to systems which help to manage the writing and
 maintenance of things such as software, documents, and websites. These systems
 were developed to manage large software projects but are useful at many levels.
-For example, VC can help you avoid the following situation: =my-analysis.R=,
-=my-analysis-final.R=, =my-analysis-final-again.R=, and so on. Try coming back to
-that 3 months later when a reviewer asks you to re-run something with a slight
-modification!
+For example, version control can help you avoid the following situation:
+=my-analysis.R=, =my-analysis-final.R=, =my-analysis-final-again.R=, and so on. Try
+coming back to that 3 months later when a reviewer asks you to re-run something
+with a slight modification!
 
 *** Reproducible research and Open research
 
-In addition to helping *you* with organising your files, a VC system and it's
-associated tooling can also help the scientific community by helping to make
-your research reproducible and open.
+In addition to helping *you* with organising your files, a version control system
+and it's associated tooling can also help the scientific community by helping to
+make your research reproducible and open.
 
 For your computational research to be considered /reproducible,/ it needs to be
 described in such a way that others can replicate your results. For it to be
@@ -80,7 +81,7 @@ This is sometimes referred to as /fetching/.
 
 *** Push
 
-If you have [[*Commit][commited]] some changes to your [[*Clone][clone]] of a [[*Repository][repository]] and want the
+If you have [[*Commit][committed]] some changes to your [[*Clone][clone]] of a [[*Repository][repository]] and want the
 original repository to have these changes made, you /push/ these changes. This is
 a fancy way of saying use your edits to update the original files.
 
@@ -106,7 +107,7 @@ similar to, but distinct from [[*Clone][cloning]] and making a [[*Branch][branch
 
 *** What is GitHub?
 
-GitHub, Inc. is a subsidairy of Microsoft. Their website provides freemium
+GitHub, Inc. is a subsidiary of Microsoft. Their website provides freemium
 hosting of git repositories. In addition to hosting the repositories, it offers
 additional tools to assist with software development. We will make extensive use
 of GitHub in this tutorial to avoid you needing to install anything on your
@@ -276,14 +277,14 @@ steps:
 
 A license specifies what people can do with your code. If you aren't sure what
 license suits your needs, you might find [[https://choosealicense.com/]] has some
-helpeful information. Most of the time, I will opt for the MIT license.
+helpful information. Most of the time, I will opt for the MIT license.
 
 There are two ways you might add a license. The manual method is to copy and
 paste the license text into a file called =LICENSE= to your repository, filling in
 =[year]= and =[fullname]= as appropriate. Alternatively, you can *Add file* and *Create
 new file* and specify that the file will be called "LICENSE" and it will offer
-you some templates to choose from. It will autofill the details of your name and
-the year.
+you some templates to choose from. It will auto-fill the details of your name
+and the year.
 
 ** Adding a README
 
@@ -418,7 +419,7 @@ following
 Once you have made the changes and re-run that script the figure in
 =git-usage.png= will have changed --- it should look like Figure [[fig:demo-result-2]]
 now. Ordinarily, you would update the figure in the same way that you update
-code, by commiting the changes. However, this is tricky to do via the GitHub
+code, by committing the changes. However, this is tricky to do via the GitHub
 website for image files, so instead, delete the file and upload the modified
 one. At this point it might be interesting to move between the =main= branch and
 your new branch to see how the files change between the two.
@@ -432,7 +433,7 @@ like their edits, you can [[*Merge][merge]] them into =main= as we are about to 
 
 To [[*Merge][merge]] your changes via the website, go back to the main page of the
 repository and you should see a new button, like the one shown in Figure
-[[fig:pull-request]], inviting you to compare the changes on this branch, ie to
+[[fig:pull-request]], inviting you to compare the changes on this branch, i.e., to
 inspect if you consider this work worthy of inclusion.
 
 #+caption: A button appears to invite you to compare branches.
@@ -475,7 +476,7 @@ this.
 At this point you should only have a single branch left and it should have the
 modifications to the figure. Congratulations on a reproducible analysis!
 
-* TODO Next steps and alternative solutions
+* Next steps and alternative solutions
 
 ** Upload to Zenodo
 
@@ -489,6 +490,7 @@ the archive and the /live/ version of the code on GitHub in the manuscript.
 - [[https://git-scm.com/book/en/v2][Pro Git]] by Scott Chacon and Ben Straub is a free book that is the ultimate
   guide but is a bit technical at times.
 - [[https://www.atlassian.com/git/tutorials][Atlassian/Bitbucket]] has excellent tutorials.
+- [[https://learngitbranching.js.org/][Learn Git Branching]] is a game revolving around explaining git.
 - [[https://lab.github.com/][GitHub Learning Lab]] has some introductory material on the use of git and
   GitHub.
 - [[https://stackoverflow.com/questions/tagged/git][Stackoverflow questions]] will often have answers to your questions.
@@ -529,7 +531,7 @@ as [[http://www.gisaid.org/][GISAID]].
 
 ** Question 1
 
-- Explain (in 100--200 words) the purpose of git, GitHub, and zenodo and the
+- Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
   relationship between these things.
 - Find and report an alternative to each of these tools (50--150 words).
 
@@ -559,3 +561,6 @@ as [[http://www.gisaid.org/][GISAID]].
 - Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]]
   and (in 200--300 words) give a brief explanation of how git and GitHub would
   or would not be relevant to each rule.
+
+#  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
+#  LocalWords:  Rscript markdown md
