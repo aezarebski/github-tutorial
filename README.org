@@ -467,7 +467,7 @@ having old branches around can lead to confusion, it is sensible to delete them
 afterwards. As shown in Figure [[fig:delete-branch]] there is a button to achieve
 this.
 
-#+caption: Here is a caption.
+#+caption: Deleting a branch after it has been merged keeps the repository tidy.
 #+name: fig:delete-branch
 #+attr_org: :width 500px
 #+attr_html: :width 400px
@@ -531,36 +531,40 @@ as [[http://www.gisaid.org/][GISAID]].
 
 ** Question 1
 
-- Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
-  relationship between these things.
-- Find and report an alternative to each of these tools (50--150 words).
+Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
+relationship between these things. Describe the value of one feature of GitHub
+not overed in this tutorial (in 100--150 words).
 
 ** Question 2
 
-- Explain (in 100--200 words) the role of version control in reproducible
-  research.
-- Give an example (in 100--150 words) of a situation in which version control
-  does not suffice to make a piece of work reproducible.
+Explain (in 100--200 words) the role of version control in reproducible
+research. Give an example (in 100--150 words) of a situation in which version
+control does not suffice to make a piece of work reproducible.
 
 ** Question 3
 
-- Download the following script and data and organise this material in a
-  repository in a suitable way.
-- Give a brief overview of the decisions you made along the way (100--200
-  words).
+Download the following script and data and organise this material in a
+repository in a suitable way. Give a brief overview of the decisions you made
+along the way (100--200 words).
 
-** TODO Question 4
+** Question 4
 
-- Fork the repository at *XXX* and merge the pull request. Note that this will
-  require resolving conflicts in a sensible way.
-- Give a brief overview of the decisions you made along the way (100--150
-  words).
+Fork the repository at https://github.com/aezarebski/conflict-resolution-example
+and merge the pull request. Note that this will require resolving the conflict
+in a sensible way. Explain what you did (in <100 words). If you have done this
+well, the commit log should look like Figure [[fig:merge-task]].
+
+#+caption: The commit log could look like this after completing Question 4.
+#+name: fig:merge-task
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./merge-task.png]]
 
 ** Question 5
 
-- Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]]
-  and (in 200--300 words) give a brief explanation of how git and GitHub would
-  or would not be relevant to each rule.
+Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]] and
+(in 200--300 words) give a brief explanation of how git and GitHub would or
+would not be relevant to each rule.
 
 #  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
 #  LocalWords:  Rscript markdown md
