@@ -477,13 +477,53 @@ modifications to the figure. Congratulations on a reproducible analysis!
 
 * TODO Next steps and alternative solutions
 
-+ You might want to archive this on zenodo or something similar
-+ You need to know where you can learn more about git
-+ You need to know what tools are used for what purposes
-+ You need to know how to navigate GitHub including the issue tracker and assess liveliness
+** Upload to Zenodo
 
+The [[https://help.zenodo.org/][Zenodo FAQs]] contain information about how to archive a GitHub repository if
+you want a more permanent form of storage. Ideally, one would archive the commit
+used to generate the contents of a manuscript so it has a DOI and reference both
+the archive and the /live/ version of the code on GitHub in the manuscript.
+
+** Learn more about git
+
+- [[https://git-scm.com/book/en/v2][Pro Git]] by Scott Chacon and Ben Straub is a free book that is the ultimate
+  guide but is a bit technical at times.
+- [[https://www.atlassian.com/git/tutorials][Atlassian/Bitbucket]] has excellent tutorials.
+- [[https://lab.github.com/][GitHub Learning Lab]] has some introductory material on the use of git and
+  GitHub.
+- [[https://stackoverflow.com/questions/tagged/git][Stackoverflow questions]] will often have answers to your questions.
 - [[https://youtu.be/bSA91XTzeuA][Inside the Hidden Git Folder - Computerphile]] gives a bit of a behind the
   scenes tour of how git works.
+
+** Learn more about GitHub
+
+There are lots of features in GitHub that haven't been covered but may be worth
+looking into: the issue tracker, the wiki, VSCode integration, and GitHub Pages
+and GitHub Actions.
+
+** Alternative solutions
+
+*** Git
+
+Git has the greatest market share but there are alternatives such as Subversion,
+Mercurial, CVS and Darcs. Given that the vast majority of people use git, your
+time is probably best spent learning git.
+
+*** GitHub
+
+While git dominates the market as the choice of version control system, there
+are many viable alternatives platforms to GitHub which may be more suitable for
+your needs:
+
+- [[https://bitbucket.org/product/][Bitbucket]]
+- [[https://about.gitlab.com/][GitLab]]
+- [[https://sourceforge.net/][SourceForge]]
+
+*** Zenodo
+
+There are good general purpose alternatives to Zenodo such as [[https://figshare.com/][figshare]] and
+[[http://datadryad.org/][Dryad]]. There are also numerous alternatives that are more field specific, such
+as [[http://www.gisaid.org/][GISAID]].
 
 * TODO Homework
 
