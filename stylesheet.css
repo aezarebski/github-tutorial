@@ -1,0 +1,33 @@
+
+body {
+    margin: 10px;
+}
+
+#content {
+    max-width: 45em;
+    margin: auto;
+}
+
+h1,h2,h3,h4 {
+    font-family:sans-serif;
+    color:#483d8b;
+}
+
+.figure {
+    padding-left: 12em;
+    padding-right: 12em;
+    font-family:sans-serif;
+}
+
+.figure-number {
+    font-weight: bolder;
+    color:#483d8b;
+}
+
+a {
+    color:#008b8b;
+}
+
+a:hover {
+    color:#b22222;
+}

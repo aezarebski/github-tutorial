@@ -1,6 +1,7 @@
 #+title: Git, GitHub and Reproducible Research
 #+author: Alexander E. Zarebski
 #+options: num:2 toc:2
+#+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
 
 * Disclaimer
 
@@ -527,7 +528,7 @@ There are good general purpose alternatives to Zenodo such as [[https://figshare
 [[http://datadryad.org/][Dryad]]. There are also numerous alternatives that are more field specific, such
 as [[http://www.gisaid.org/][GISAID]].
 
-* TODO Homework
+* Homework
 
 ** Question 1
 
