@@ -152,9 +152,18 @@ of the resulting repository is available [[https://github.com/aezarebski/git-usa
 #+attr_html: :width 400px
 [[./git-usage-1.png]]
 
+We will start by looking at the [[*Code and data][code and data]] used in this analysis, then
+consider how one might [[*Organising the data and code][organise the files]]. Once we have the code in a sensible
+state we can [[*Uploading to GitHub][put it in a GitHub repository]] and add some finishing touches such
+as a [[*Adding a license][license]], some [[*Adding a README][documentation]], and some additional [[*Recording the session information][information about package
+versions]]. We then consider the situation in which [[*Branching and merging][changes]] need to be made by a
+collaborator.
+
 ** Code and data
 
-The data and the code that generated this figure are included below. The data is saved in a file =stackoverflow-git-data.csv=.
+Start by making a new directory called =git-usage= which will hold all our files.
+The data and the code that generated this figure are included below. This data
+should be saved in a called =stackoverflow-git-data.csv=.
 
 #+begin_src csv
 year,percentage
@@ -165,7 +174,8 @@ year,percentage
 2021,93.43
 #+end_src
 
-The code is saved in a file =make-plot.R=
+We then need a script to carry out the analysis. Save the following code in a
+file called =make-plot.R=
 
 #+begin_src R
   library(ggplot2)
@@ -198,7 +208,8 @@ The code is saved in a file =make-plot.R=
   sink()
 #+end_src
 
-If we put these into a directory called =git-usage= we end up with the following
+Once we have run the =make-plot.R= script, the directory should contain four files
+and have a structure like the following.
 
 #+begin_example
 git-usage
@@ -208,23 +219,23 @@ git-usage
 └── stackoverflow-git-data.csv
 #+end_example
 
-Copy the code and data into a suitable place on your machine and run the R
-script to ensure that it works. In this worked example we will go through
-cleaning this up so it is easier for people (including ourselves) to make sense
-of this.
+In the next section we will go through cleaning this up so it is easier for
+people (including yourself in the future) to make sense of this.
 
 ** Organising the data and code
 
-As a first step we will use directories to impose a bit of structure. Organising
-our files in this way is useful as it makes it far easier for someone to
-understand the purpose of each of the files. Follow the following steps to
-organise your code more appropriately.
+As a first step we will use directories to impose a sensible structure to our
+files. Organising files in this way is useful as it makes it far easier for
+someone to understand what each file is needed for. Follow the following steps
+(starting from within =git-usage=,) to organise your code more appropriately:
 
 1. Make a directory called =src= and move =make-plot.R= there.
 2. Make a directory called =data= and move =stackoverflow-git-data.csv= there.
 3. Make a directory called =out= which we will write results to.
-4. Fix the call to =read.csv= so it can find the CSV.
-5. Fix the calls to =ggsave= and =sink= so it writes the output into =out=.
+4. Fix the call to =read.csv= in =make-plot.R= so it can find the CSV since it now
+   lives in the =data= directory.
+5. Fix the calls to =ggsave= and =sink= so they write their output to the =out=
+   directory.
 
 Once you have done this, the R script should look like the following.
 
@@ -244,8 +255,10 @@ Once you have done this, the R script should look like the following.
   sink()
 #+end_src
 
-After you have run the code, the directory structure should look like the
-following.
+Once you have run the code (with =git-usage= as your working directory), the
+directory structure should look like the following. Note how the output files
+now appear in the =out= directory. If you are running the script from an R REPL,
+remember you can use =setwd= to specify the working directory.
 
 #+begin_example
 git-usage
@@ -262,19 +275,22 @@ git-usage
 
 Now that our code is in a reasonable state, we can upload it to GitHub. If you
 do not already have a GitHub account, please follow the instructions [[*Setting up a GitHub account][above]],
-which describe how to make one. Once you have done this, follow the following
-steps:
+which describe how to make one. Once you have a GitHub account, you can follow
+the following steps to upload these files:
 
-1. Visit [[https://github.com/]] and create a new repository by clicking *New*, you
+1. Visit [[https://github.com/]] and create a new [[*Repository][repository]] by clicking *New*, you
    will need to pick a name for the repository (I called mine =git-usage=.) The
-   default settings are fine. Click *Create repository*.
-2. Click *creating a new file* to start the process of adding =src/make-plot.R=.
+   default settings provided by GitHub are fine. Click *Create repository*.
+2. We now need to [[*Commit][commit]] our files and [[*Push][push]] them to the remote repository.
+   However, since we are doing this through GitHub, it is all combined into a
+   single step. Click *creating a new file* to start the process of adding the
+   =src/make-plot.R= file.
    1. Ensure the name of the file is =git-usage/src/make-plot.R=.
-   2. Copy-and-paste the code in =make-plot.R= into the editor.
-   3. Click *Commit new file*.
-3. Repeat this process with =data/stackoverflow-git-data.csv= and the output files
-   by clicking on *Add file* and selecting *Create new file*. Note that for
-   =git-usage.png= you will need to use *Upload file* instead of *Create new file*.
+   2. Copy-and-paste the code in =make-plot.R= into the text box provided.
+   3. Click *Commit new file* button.
+3. Repeat this process with =data/stackoverflow-git-data.csv= and the output TXT
+   file. In the case of the PNG image, =git-usage.png=, you will need to use
+   *Upload file* instead of *Create new file*.
 
 ** Adding a license
 
@@ -536,7 +552,7 @@ as [[http://www.gisaid.org/][GISAID]].
 
 Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
 relationship between these things. Describe the value of one feature of GitHub
-not overed in this tutorial (in 100--150 words).
+not covered in this tutorial (in 100--150 words).
 
 ** Question 2
 
@@ -570,4 +586,4 @@ Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Ru
 would not be relevant to each rule.
 
 #  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
-#  LocalWords:  Rscript markdown md
+#  LocalWords:  Rscript markdown md src ggplot
