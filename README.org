@@ -141,8 +141,10 @@ particular version of some code in a paper.
 
 Now that we have an understanding of version control and its associated tooling,
 we can see an example of how this enables us to do more reproducible research.
-Suppose that you wanted to include Figure [[fig:demo-result-1]] in a manuscript and
-you wanted to ensure your analysis reproducible.
+Suppose you wanted to ensure that the analysis leading to Figure
+[[fig:demo-result-1]] was reproducible. In this worked example we will work through
+the process of setting up a repository and uploading the relevant files. A copy
+of the resulting repository is available [[https://github.com/aezarebski/git-usage][here]].
 
 #+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line, the trend is not significant at \(95\%\).
 #+name: fig:demo-result-1
