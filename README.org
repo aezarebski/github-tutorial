@@ -3,6 +3,19 @@
 #+options: num:2 toc:2
 #+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
 
+Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will look
+at ways git and GitHub can help you with computational research, including how
+make it more reproducible. You will learn the fundamentals of git and gain
+practical experience in the use of GitHub. For those interested in learning more
+about version control, there is also a list of [[*Next steps and alternative solutions][additional resources]] and some
+[[*Homework][homework problems]] at the end to test your understanding.
+
+Please read through the [[*Background material][background material]] first then follow along with the [[*Worked
+ example][worked example]]. You do not need any special software installed (everything is
+done in the browser), however the worked example does make use of R and ggplot2.
+If you find an error in this document, or would like to suggest an improvement,
+please make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
+
 * Disclaimer
 
 These materials makes use of proprietary products and a simplified workflow in
