@@ -575,9 +575,18 @@ control does not suffice to make a piece of work reproducible.
 
 ** Question 3
 
-Download the following script and data and organise this material in a
-repository in a suitable way. Give a brief overview of the decisions you made
-along the way (100--200 words).
+Download the scripts and data from the links below, and run them and organise
+this material in a GitHub repository in a suitable way. Give a brief overview of
+the decisions you made along the way (100--200 words). Remember to include a
+link to your GitHub respository in your answer.
+
+- [[./homework-question-3/data-sources.txt][Data description]]
+- [[./homework-question-3/melbourne.csv][Melbourne rainfall data]]
+- [[./homework-question-3/oxford.txt][Oxford rainfall data]]
+- [[./homework-question-3/combine-data.R][First R script]]
+- [[./homework-question-3/make-plot.R][Second R script]]
+
+If you cannot download these files directly, they should also be available [[https://github.com/aezarebski/github-tutorial/tree/main/homework-question-3][here]].
 
 ** Question 4
 
