@@ -590,6 +590,24 @@ If you cannot download these files directly, they should also be available [[htt
 
 ** Question 4
 
+This [[https://github.com/aezarebski/biology-github-tutorial][repository]] is an attempt at visualising two datasets. Unfortunately, a bug
+has been introduced somewhere. The steps carried out while creating this
+repository are as follows:
+
+1. Plot the data in =iris.csv= using =make-fig-a.R=.
+2. Plot the data in =mtcars-renamed.csv= using =make-fig-b.R=
+3. Realise there is duplicated code and refactor it: =reshape-data-function.R=.
+4. Tweak the figures to make them clearer.
+5. Realise that something is wrong with =fig-a.png=!
+
+Making reference to the [[https://github.com/aezarebski/biology-github-tutorial/commits/main][commit history]] of the repository, answer the following
+questions (in 150--250 words):
+
+1. What is the bug and how would you fix it?
+2. How did you find the bug? How would you do this if the bug was more subtle,
+   and there were hundreds of files and thousands of commits?
+3. What could have been done to prevent this bug?
+
 ** Question 5
 
 Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]] and
