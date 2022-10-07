@@ -13,8 +13,9 @@ about version control, there is also a list of [[*Next steps and alternative sol
 Please read through the [[*Background material][background material]] first then follow along with the [[*Worked
  example][worked example]]. You do not need any special software installed (everything is
 done in the browser), however the worked example does make use of R and ggplot2.
-If you find an error in this document, or would like to suggest an improvement,
-please make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
+Installing [[https://www.rstudio.com/][RStudio]] is probably the easiest way to utilise these software. If you
+find an error in this document, or would like to suggest an improvement, please
+make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
 
 * Disclaimer
 
@@ -22,8 +23,9 @@ These materials makes use of proprietary products and a simplified workflow in
 order to emphasise the main concepts and to save on installation and
 configuration time. Some references will be given at the end to direct you to
 free and open source solutions and more sustainable workflows; the core ideas
-are the same though so learning the material here should make it easier to
-migrate to more sensible methods in the future should the need arise.
+are the same though, so understanding the material given here should make it
+easier to migrate to more advanced methods in the future should the need for
+them arise.
 
 * Background material
 
@@ -562,6 +564,12 @@ as [[http://www.gisaid.org/][GISAID]].
 
 * Homework
 
+Please make sure that in answering these questions you use a format that is easy
+to read and that supports hyperlinks. The ability to include chunks of code (or
+mono-spaced fonts in general) will be useful, particularly if you want to
+display the output of the [[https://en.wikipedia.org/wiki/Tree_(command)][=tree= command]]. I would recommend using something like
+RMarkdown.
+
 ** Question 1
 
 Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
@@ -572,7 +580,9 @@ not covered in this tutorial (in 100--150 words).
 
 Explain (in 100--200 words) the role of version control in reproducible
 research. Give an example (in 100--150 words) of a situation in which version
-control does not suffice to make a piece of work reproducible.
+control does not suffice to make a piece of work reproducible. Describe (in
+50--100 words) another popular tool that helps to make computational research
+reproducible.
 
 ** Question 3
 
@@ -612,8 +622,8 @@ questions (in 150--250 words):
 ** Question 5
 
 Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]] and
-(in 200--300 words) give a brief explanation of how git and GitHub would or
-would not be relevant to each rule.
+(in 200--300 words *total*) give a brief explanation of how git and GitHub would
+or would not be relevant to each rule.
 
 #  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
-#  LocalWords:  Rscript markdown md src ggplot freemium
+#  LocalWords:  Rscript markdown md src ggplot freemium RMarkdown RStudio
