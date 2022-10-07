@@ -590,17 +590,6 @@ If you cannot download these files directly, they should also be available [[htt
 
 ** Question 4
 
-Fork the repository at https://github.com/aezarebski/conflict-resolution-example
-and merge the pull request. Note that this will require resolving the conflict
-in a sensible way. Explain what you did (in <100 words). If you have done this
-well, the commit log should look like Figure [[fig:merge-task]].
-
-#+caption: The commit log could look like this after completing Question 4.
-#+name: fig:merge-task
-#+attr_org: :width 500px
-#+attr_html: :width 400px
-[[./merge-task.png]]
-
 ** Question 5
 
 Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]] and

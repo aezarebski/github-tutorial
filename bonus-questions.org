@@ -1,0 +1,22 @@
+#+title: Bonus Questions
+#+author: Alexander E. Zarebski
+#+options: num:2 toc:2
+#+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
+
+* Bonus Questions
+
+A previous version of this tutorial used the following material and it may be
+used again in the future...
+
+** Question
+
+Fork the repository at https://github.com/aezarebski/conflict-resolution-example
+and merge the pull request. Note that this will require resolving the conflict
+in a sensible way. Explain what you did (in <100 words). If you have done this
+well, the commit log should look like Figure [[fig:merge-task]].
+
+#+caption: The commit log could look like this after completing Question 4.
+#+name: fig:merge-task
+#+attr_org: :width 500px
+#+attr_html: :width 400px
+[[./merge-task.png]]
