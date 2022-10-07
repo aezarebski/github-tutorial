@@ -3,9 +3,9 @@
 #+options: num:2 toc:2
 #+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
 
-Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will look
-at ways git and GitHub can help you with computational research, including how
-make it more reproducible. You will learn the fundamentals of git and gain
+Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will
+look at ways git and GitHub can help you with computational research, including
+how make it more reproducible. You will learn the fundamentals of git and gain
 practical experience in the use of GitHub. For those interested in learning more
 about version control, there is also a list of [[*Next steps and alternative solutions][additional resources]] and some
 [[*Homework][homework problems]] at the end to test your understanding.
@@ -37,15 +37,15 @@ topics but should get you started with them and help direct further learning.
 maintenance of things such as software, documents, and websites. These systems
 were developed to manage large software projects but are useful at many levels.
 For example, version control can help you avoid the following situation:
-=my-analysis.R=, =my-analysis-final.R=, =my-analysis-final-again.R=, and so on. Try
-coming back to that 3 months later when a reviewer asks you to re-run something
-with a slight modification!
+=my-analysis.R=, =my-analysis-final.R=, =my-analysis-final-again.R=, and so on.
+Try coming back to that 3 months later when a reviewer asks you to re-run
+something with a slight modification!
 
 *** Reproducible research and Open research
 
-In addition to helping *you* with organising your files, a version control system
-and it's associated tooling can also help the scientific community by helping to
-make your research reproducible and open.
+In addition to helping *you* with organising your files, a version control
+system and it's associated tooling can also help the scientific community by
+helping to make your research reproducible and open.
 
 For your computational research to be considered /reproducible,/ it needs to be
 described in such a way that others can replicate your results. For it to be
@@ -77,8 +77,9 @@ lives on your machine, but they are often shared on a platform such as GitHub.
 An edit to a file that you have recorded as part of the history of edits is
 called a /commit/. It is both a noun and a verb, you commit an edit and the
 [[*Repository][repository]] contains all of your commits. This can be thought of as a stronger
-version of saving a file. Each commit gets a unique identifier (called a /hash/).
-Sometimes we use "commit" to refer to the state of all the code after an edit.
+version of saving a file. Each commit gets a unique identifier (called a
+/hash/). Sometimes we use "commit" to refer to the state of all the code after
+an edit.
 
 *** Clone
 
@@ -90,14 +91,14 @@ downloaded a copy from a platform such as GitHub.
 
 Suppose you [[*Clone][cloned]] a repository a while ago and you want to get a copy of all
 the [[*Commit][commits]] that have been made to the original repository since then. To get
-these commits you /pull/ them, which is a fancy way of saying updating your files.
-This is sometimes referred to as /fetching/.
+these commits you /pull/ them, which is a fancy way of saying updating your
+files. This is sometimes referred to as /fetching/.
 
 *** Push
 
 If you have [[*Commit][committed]] some changes to your [[*Clone][clone]] of a [[*Repository][repository]] and want the
-original repository to have these changes made, you /push/ these changes. This is
-a fancy way of saying use your edits to update the original files.
+original repository to have these changes made, you /push/ these changes. This
+is a fancy way of saying use your edits to update the original files.
 
 *** Branch
 
@@ -137,8 +138,8 @@ verification.
 2. Fill in the forms to create an account.
 3. Verify that account by entering the access code GitHub sends to the email
    address you registered with.
-4. Verify that you can summon the *Command Palette* with =crtl k= for Windows and
-   Linux and =command k= on a mac.
+4. Verify that you can summon the *Command Palette* with =crtl k= for Windows
+   and Linux and =command k= on a mac.
 5. The appearance and accessibility settings can be reached by searching for
    them in the command palette.
 
@@ -174,9 +175,9 @@ collaborator.
 
 ** Code and data
 
-Start by making a new directory called =git-usage= which will hold all our files.
-The data and the code that generated this figure are included below. This data
-should be saved in a called =stackoverflow-git-data.csv=.
+Start by making a new directory called =git-usage= which will hold all our
+files. The data and the code that generated this figure are included below. This
+data should be saved in a called =stackoverflow-git-data.csv=.
 
 #+begin_src csv
 year,percentage
@@ -245,8 +246,8 @@ someone to understand what each file is needed for. Follow the following steps
 1. Make a directory called =src= and move =make-plot.R= there.
 2. Make a directory called =data= and move =stackoverflow-git-data.csv= there.
 3. Make a directory called =out= which we will write results to.
-4. Fix the call to =read.csv= in =make-plot.R= so it can find the CSV since it now
-   lives in the =data= directory.
+4. Fix the call to =read.csv= in =make-plot.R= so it can find the CSV since it
+   now lives in the =data= directory.
 5. Fix the calls to =ggsave= and =sink= so they write their output to the =out=
    directory.
 
@@ -578,7 +579,7 @@ control does not suffice to make a piece of work reproducible.
 Download the scripts and data from the links below, and run them and organise
 this material in a GitHub repository in a suitable way. Give a brief overview of
 the decisions you made along the way (100--200 words). Remember to include a
-link to your GitHub respository in your answer.
+link to your GitHub repository in your answer.
 
 - [[./homework-question-3/data-sources.txt][Data description]]
 - [[./homework-question-3/melbourne.csv][Melbourne rainfall data]]
@@ -615,4 +616,4 @@ Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Ru
 would not be relevant to each rule.
 
 #  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
-#  LocalWords:  Rscript markdown md src ggplot
+#  LocalWords:  Rscript markdown md src ggplot freemium
