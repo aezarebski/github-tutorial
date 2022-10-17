@@ -139,6 +139,11 @@ use of git, I would recommend getting a client and learning how to use it.
 [[https://desktop.github.com/][GitHub Desktop]] and [[https://www.sourcetreeapp.com/][Sourcetree]] are both free options developed by major companies
 so should be very friendly[fn:1].
 
+If you are already using RStudio, you might also be interested in the features
+it provides for version control. There is a [[https://resources.github.com/github-and-rstudio/][tutorial on using RStudio as a
+GitHub client]], but it requires some command line experience and for both RStudio
+and git to be installed on your machine.
+
 ** GitHub
 
 *** What is GitHub?
