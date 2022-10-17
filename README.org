@@ -57,12 +57,12 @@ is not sufficient for your research to be considered reproducible.
 
 ** Git
 
-Created in 2005 by Linus Torvalds to help with the development of the Linux
-kernel, git has become a fundamental tool in software development. In the 2021
-Stackoverflow Developer Survey over \(90\%\) of respondents used git; it is
+Created in 2005 by Linus Torvalds[fn:2] to help with the development of the
+Linux kernel, git has become a fundamental tool for software development. In the
+2021 Stackoverflow Developer Survey over \(90\%\) of respondents used git; it is
 nearly synonymous with version control. If you intend to collaborate in the
 writing of substantial amounts of code, taking the time to learn how to use git
-is a good idea.
+is a good idea, at which point you may want to switch to a [[*Client][GUI interface]] too.
 
 Working with git will be much easier if you get familiar with some of the
 terminology first. Unless you are familiar with git already, you should at least
@@ -94,7 +94,8 @@ downloaded a copy from a platform such as GitHub.
 Suppose you [[*Clone][cloned]] a repository a while ago and you want to get a copy of all
 the [[*Commit][commits]] that have been made to the original repository since then. To get
 these commits you /pull/ them, which is a fancy way of saying updating your
-files. This is sometimes referred to as /fetching/.
+files. This is sometimes referred to as /fetching/. There are some subtle
+differences that you probably won't ever need.
 
 *** Push
 
@@ -118,7 +119,25 @@ including the changes on someone's branch is called /merging/ the changes.
 *** Fork
 
 When you make a copy of a repository that sits on your GitHub account. This is
-similar to, but distinct from [[*Clone][cloning]] and making a [[*Branch][branch]].
+similar to, (but distinct from) [[*Clone][cloning]] and making a [[*Branch][branch]]. Forking a
+repository is an important part of contributing code to other peoples' projects
+when using GitHub, however the details of this are beyond the scope of this
+tutorial.
+
+*** Pull request (a.k.a. PR)
+
+A pull request is a way to request that the owner of a repository accepts the
+changes you are proposing. As with [[*Fork][forking]], the details are of this are beyond
+the scope of this tutorial.
+
+*** Client
+
+A /git client/ is a program that "simplifies" the use of git. We will only use
+the GitHub website in this tutorial because it handles most of this for us and
+avoids any complicated installation. If you are going to be making substantial
+use of git, I would recommend getting a client and learning how to use it.
+[[https://desktop.github.com/][GitHub Desktop]] and [[https://www.sourcetreeapp.com/][Sourcetree]] are both free options developed by major companies
+so should be very friendly[fn:1].
 
 ** GitHub
 
@@ -126,15 +145,15 @@ similar to, but distinct from [[*Clone][cloning]] and making a [[*Branch][branch
 
 GitHub, Inc. is a subsidiary of Microsoft. Their website provides freemium
 hosting of git repositories. In addition to hosting the repositories, it offers
-additional tools to assist with software development. We will make extensive use
-of GitHub in this tutorial to avoid you needing to install anything on your
-machine. If you are going to use git extensively, it would be wise to learn how
-to do this from the command line or some other program.
+additional tools to assist with software development. We will use GitHub in this
+tutorial to avoid you needing to install anything on your machine. If you are
+going to use git extensively, it would be wise to learn how to do this from the
+command line or some other [[*Client][program]].
 
 *** Setting up a GitHub account
 
 To register an account you will need an email address that can be used for
-verification.
+verification. A Gmail account makes this particularly easy.
 
 1. Visit [[https://github.com/]] and click *Sign Up*.
 2. Fill in the forms to create an account.
@@ -631,3 +650,8 @@ or would not be relevant to each rule.
 
 #  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
 #  LocalWords:  Rscript markdown md src ggplot freemium RMarkdown RStudio
+
+* Footnotes
+
+[fn:1] I use [[https://magit.vc/][magit]], which is nice if you already use emacs, but otherwise may be a bit weird.
+[fn:2] Legend has it, he named git after himself.
