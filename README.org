@@ -556,6 +556,26 @@ use any of git's features though you should [[*Clone][clone]] the repository ins
 #+attr_html: :width 500px
 [[./download-zip-file.png]]
 
+** What if I am using Python, or some other language?
+
+We have used the R programming language in this tutorial, but how we use GitHub
+is language agnostic (for the most part). Most of the time, organising your data
+and source code in this way is a good idea. Different programming languages
+record their package versions in different ways. Recall in [[*Recording the session information][this section]] that we
+generated a file containing the package versions. For the Python language, there
+is the pip function. Running =pip freeze= at the command line will print out the
+package versions. You can pipe this information to a text file (which is
+conventionally called =requirements.txt=) with the following command:
+
+#+begin_src sh
+  pip freeze > requirements.txt
+#+end_src
+
+If you want to use multiple Python packages, it's a good idea to invest time
+into learning how to set up a virtual environment. A virtual environment is an
+isolated group of packages used for a project. If you want understand how to do
+this, see the relevant [[https://docs.python.org/3/tutorial/venv.html][python documentation]].
+
 ** Upload to Zenodo
 
 The [[https://help.zenodo.org/][Zenodo FAQs]] contain information about how to archive a GitHub repository if
