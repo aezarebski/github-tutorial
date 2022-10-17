@@ -1,6 +1,33 @@
+:root {
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #839496;
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
+}
 
 body {
     margin: 10px;
+    background-color: var(--base3);
+    color: var(--base01);
+}
+
+p,
+li {
+    line-height: 1.4;
+    font-size: 17px;
+    font-family: sans-serif;
 }
 
 #content {
@@ -8,26 +35,33 @@ body {
     margin: auto;
 }
 
-h1,h2,h3,h4 {
-    font-family:sans-serif;
-    color:#483d8b;
+h1,
+h2,
+h3,
+h4 {
+    font-family: sans-serif;
+    color: var(--base01);
 }
 
 .figure {
-    padding-left: 12em;
-    padding-right: 12em;
-    font-family:sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
 }
 
 .figure-number {
     font-weight: bolder;
-    color:#483d8b;
+    color: var(--base01);
 }
 
 a {
-    color:#008b8b;
+    color: var(--cyan);
 }
 
 a:hover {
-    color:#b22222;
+    color: var(--red);
+}
+
+code {
+    background-color: var(--base2);
 }
