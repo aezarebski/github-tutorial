@@ -564,32 +564,35 @@ as [[http://www.gisaid.org/][GISAID]].
 
 * Homework
 
-Please make sure that in answering these questions you use a format that is easy
-to read and that supports hyperlinks. The ability to include chunks of code (or
-mono-spaced fonts in general) will be useful, particularly if you want to
-display the output of the [[https://en.wikipedia.org/wiki/Tree_(command)][=tree= command]]. I would recommend using something like
-RMarkdown.
+Please ensure that in answering these questions, you use a format that is easy
+to read and supports hyperlinks. The ability to include chunks of code (or
+mono-spaced fonts) may be useful. You want to display the output of the [[https://en.wikipedia.org/wiki/Tree_(command)][=tree=
+command]]. I would recommend using something like RMarkdown.
 
 ** Question 1
 
-Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
-relationship between these things. Describe the value of one feature of GitHub
-not covered in this tutorial (in 100--150 words).
+This question will assess your understanding of some tools that can assist with
+computational science. Explain (in 100--200 words) the roles of git, GitHub, and
+Zenodo, and then explain the relationship between these things. Describe the
+value of one feature of GitHub not covered in this tutorial (in 100--150 words).
 
 ** Question 2
 
-Explain (in 100--200 words) the role of version control in reproducible
+Explain (in 100--200 words) the function of version control in reproducible
 research. Give an example (in 100--150 words) of a situation in which version
-control does not suffice to make a piece of work reproducible. Describe (in
-50--100 words) another popular tool that helps to make computational research
-reproducible.
+control alone does not suffice to make a piece of work reproducible. Describe
+(in 50--100 words) another popular tool that helps to make computational
+research reproducible.
 
 ** Question 3
 
-Download the scripts and data from the links below, and run them and organise
-this material in a GitHub repository in a suitable way. Give a brief overview of
-the decisions you made along the way (100--200 words). Remember to include a
-link to your GitHub repository in your answer.
+This question will test your ability to organise the artefacts of a
+computational project. Download the scripts and data files using the links below
+and run them. Organise the files you have downloaded and the results of running
+them in an appropriately structured GitHub repository. Give a brief overview of
+the decisions you made along the way (in 100--200 words). Once you are happy
+with this, download a ZIP file for this repository and include it as part of
+your submission.
 
 - [[./homework-question-3/data-sources.txt][Data description]]
 - [[./homework-question-3/melbourne.csv][Melbourne rainfall data]]
@@ -601,23 +604,24 @@ If you cannot download these files directly, they should also be available [[htt
 
 ** Question 4
 
-This [[https://github.com/aezarebski/biology-github-tutorial][repository]] is an attempt at visualising two datasets. Unfortunately, a bug
-has been introduced somewhere. The steps carried out while creating this
-repository are as follows:
+This [[https://github.com/aezarebski/biology-github-tutorial][repository]] contains an attempt at visualising two datasets. Unfortunately,
+a bug was introduced somewhere during that attempt. The attempt consisted of the
+following steps:
 
-1. Plot the data in =iris.csv= using =make-fig-a.R=.
-2. Plot the data in =mtcars-renamed.csv= using =make-fig-b.R=
-3. Realise there is duplicated code and refactor it: =reshape-data-function.R=.
-4. Tweak the figures to make them clearer.
-5. Realise that something is wrong with =fig-a.png=!
+1. Plotting the data in =iris.csv= using =make-fig-a.R=.
+2. Plotting the data in =mtcars-renamed.csv= using =make-fig-b.R=
+3. Realising that there is duplicated code and refactoring it:
+   =reshape-data-function.R=.
+4. Tweaking the figures to make them clearer.
+5. And finally, realising that something is wrong with =fig-a.png=!
 
-Making reference to the [[https://github.com/aezarebski/biology-github-tutorial/commits/main][commit history]] of the repository, answer the following
+Referring to the [[https://github.com/aezarebski/biology-github-tutorial/commits/main][commit history]] of the repository, answer the following
 questions (in 150--250 words):
 
-1. What is the bug and how would you fix it?
-2. How did you find the bug? How would you do this if the bug was more subtle,
-   and there were hundreds of files and thousands of commits?
-3. What could have been done to prevent this bug?
+1. What bug was introduced, and how would you fix it?
+2. How did you find the bug? How would you do this if the bug was subtle and
+   there were hundreds of files and thousands of commits?
+3. Could you have prevented this bug by doing something differently?
 
 ** Question 5
 
