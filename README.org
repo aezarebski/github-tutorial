@@ -586,10 +586,13 @@ reproducible.
 
 ** Question 3
 
-Download the scripts and data from the links below, and run them and organise
-this material in a GitHub repository in a suitable way. Give a brief overview of
-the decisions you made along the way (100--200 words). Remember to include a
-link to your GitHub repository in your answer.
+This question will test your ability to organise the artefacts of a
+computational project. Download the scripts and data files using the links below
+and run them. Organise the files you have downloaded and the results of running
+them in an appropriately structured GitHub repository. Give a brief overview of
+the decisions you made along the way (in 100--200 words). Once you are happy
+with this, download a ZIP file for this repository and include it as part of
+your submission.
 
 - [[./homework-question-3/data-sources.txt][Data description]]
 - [[./homework-question-3/melbourne.csv][Melbourne rainfall data]]
