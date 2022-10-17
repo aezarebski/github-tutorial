@@ -165,7 +165,7 @@ of the resulting repository is available [[https://github.com/aezarebski/git-usa
 #+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line, the trend is not significant at \(95\%\).
 #+name: fig:demo-result-1
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./git-usage-1.png]]
 
 We will start by looking at the [[*Code and data][code and data]] used in this analysis, then
@@ -411,7 +411,7 @@ desired changes.
 #+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a grey line, the trend is not significant at \(95\%\).
 #+name: fig:demo-result-2
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./git-usage-2.png]]
 
 To avoid making changes to the main copy of the code we will work on a [[*Branch][branch]],
@@ -424,7 +424,7 @@ GitHub).
 #+caption: Create a new branch using the drop-down menu.
 #+name: fig:create-new-branch
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./create-new-branch.png]]
 
 *** Make desired edits to the code and output
@@ -474,7 +474,7 @@ inspect if you consider this work worthy of inclusion.
 #+caption: A button appears to invite you to compare branches.
 #+name: fig:pull-request
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./pull-request.png]]
 
 Inspect the differences between the branches and if you are happy with them
@@ -484,7 +484,7 @@ create a pull request by clicking the button as shown in Figure
 #+caption: If you are happy with the content of a branch, you can create a pull request.
 #+name: fig:create-pull-request
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./create-pull-request.png]]
 
 Once you have created the pull request, the next step is to [[*Merge][merge]] that branch
@@ -494,7 +494,7 @@ Figure [[fig:merge-pull-request]].
 #+caption: If you accept a pull request you can merge the changes with the Merge pull request button.
 #+name: fig:merge-pull-request
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./merge-pull-request.png]]
 
 Once a branch has been merged it will hang around until you delete it. Since
@@ -505,7 +505,7 @@ this.
 #+caption: Deleting a branch after it has been merged keeps the repository tidy.
 #+name: fig:delete-branch
 #+attr_org: :width 500px
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[./delete-branch.png]]
 
 At this point you should only have a single branch left and it should have the
