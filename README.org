@@ -532,6 +532,20 @@ modifications to the figure. Congratulations on a reproducible analysis!
 
 * Next steps and alternative solutions
 
+** Help! I just want to download the files
+
+If you want to download the files from GitHub and do not want any of the
+associated git functionality, you can download a ZIP file that contains the
+contents of a repository. Figure [[fig:download-zip-file]] shows the menu for
+downloading a ZIP file containing the contents of a repository. If you want to
+use any of git's features though you should [[*Clone][clone]] the repository instead.
+
+#+caption: You can download a ZIP file containing the contents of a repository from GitHub.
+#+name: fig:download-zip-file
+#+attr_org: :width 500px
+#+attr_html: :width 500px
+[[./download-zip-file.png]]
+
 ** Upload to Zenodo
 
 The [[https://help.zenodo.org/][Zenodo FAQs]] contain information about how to archive a GitHub repository if
