@@ -318,14 +318,24 @@ the following steps to upload these files:
    default settings provided by GitHub are fine. Click *Create repository*.
 2. We now need to [[*Commit][commit]] our files and [[*Push][push]] them to the remote repository.
    However, since we are doing this through GitHub, it is all combined into a
-   single step. Click *creating a new file* to start the process of adding the
-   =src/make-plot.R= file.
-   1. Ensure the name of the file is =git-usage/src/make-plot.R=.
+   single step. Click *Add file* and then *creating a new file* to start the
+   process of adding the =src/make-plot.R= file.
+   1. Ensure the name of the file is =git-usage/src/make-plot.R= (be careful
+      that you have the /path/ with the =\= correct.)
    2. Copy-and-paste the code in =make-plot.R= into the text box provided.
    3. Click *Commit new file* button.
+   If you are struggling to make a new directory in GitHub, see the next
+   section.
 3. Repeat this process with =data/stackoverflow-git-data.csv= and the output TXT
    file. In the case of the PNG image, =git-usage.png=, you will need to use
    *Upload file* instead of *Create new file*.
+
+** Making directories via GitHub
+
+You cannot add an empty directory to a GitHub directory. If you want a new
+directory to be added, you need to commit a file to it. One convention for this
+is to make an empty file in the desired directory (often this will be a file
+called =.gitkeep=).
 
 ** Adding a license
 
