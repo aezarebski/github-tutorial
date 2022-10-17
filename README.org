@@ -605,23 +605,24 @@ If you cannot download these files directly, they should also be available [[htt
 
 ** Question 4
 
-This [[https://github.com/aezarebski/biology-github-tutorial][repository]] is an attempt at visualising two datasets. Unfortunately, a bug
-has been introduced somewhere. The steps carried out while creating this
-repository are as follows:
+This [[https://github.com/aezarebski/biology-github-tutorial][repository]] contains an attempt at visualising two datasets. Unfortunately,
+a bug was introduced somewhere during that attempt. The attempt consisted of the
+following steps:
 
-1. Plot the data in =iris.csv= using =make-fig-a.R=.
-2. Plot the data in =mtcars-renamed.csv= using =make-fig-b.R=
-3. Realise there is duplicated code and refactor it: =reshape-data-function.R=.
-4. Tweak the figures to make them clearer.
-5. Realise that something is wrong with =fig-a.png=!
+1. Plotting the data in =iris.csv= using =make-fig-a.R=.
+2. Plotting the data in =mtcars-renamed.csv= using =make-fig-b.R=
+3. Realising that there is duplicated code and refactoring it:
+   =reshape-data-function.R=.
+4. Tweaking the figures to make them clearer.
+5. And finally, realising that something is wrong with =fig-a.png=!
 
-Making reference to the [[https://github.com/aezarebski/biology-github-tutorial/commits/main][commit history]] of the repository, answer the following
+Referring to the [[https://github.com/aezarebski/biology-github-tutorial/commits/main][commit history]] of the repository, answer the following
 questions (in 150--250 words):
 
-1. What is the bug and how would you fix it?
-2. How did you find the bug? How would you do this if the bug was more subtle,
-   and there were hundreds of files and thousands of commits?
-3. What could have been done to prevent this bug?
+1. What bug was introduced, and how would you fix it?
+2. How did you find the bug? How would you do this if the bug was subtle and
+   there were hundreds of files and thousands of commits?
+3. Could you have prevented this bug by doing something differently?
 
 ** Question 5
 
