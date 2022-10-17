@@ -564,11 +564,10 @@ as [[http://www.gisaid.org/][GISAID]].
 
 * Homework
 
-Please make sure that in answering these questions you use a format that is easy
-to read and that supports hyperlinks. The ability to include chunks of code (or
-mono-spaced fonts in general) will be useful, particularly if you want to
-display the output of the [[https://en.wikipedia.org/wiki/Tree_(command)][=tree= command]]. I would recommend using something like
-RMarkdown.
+Please ensure that in answering these questions, you use a format that is easy
+to read and supports hyperlinks. The ability to include chunks of code (or
+mono-spaced fonts) may be useful. You want to display the output of the [[https://en.wikipedia.org/wiki/Tree_(command)][=tree=
+command]]. I would recommend using something like RMarkdown.
 
 ** Question 1
 
