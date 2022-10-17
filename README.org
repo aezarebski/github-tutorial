@@ -572,17 +572,18 @@ RMarkdown.
 
 ** Question 1
 
-Explain (in 100--200 words) the purpose of git, GitHub, and Zenodo and the
-relationship between these things. Describe the value of one feature of GitHub
-not covered in this tutorial (in 100--150 words).
+This question will assess your understanding of some tools that can assist with
+computational science. Explain (in 100--200 words) the roles of git, GitHub, and
+Zenodo, and then explain the relationship between these things. Describe the
+value of one feature of GitHub not covered in this tutorial (in 100--150 words).
 
 ** Question 2
 
-Explain (in 100--200 words) the role of version control in reproducible
+Explain (in 100--200 words) the function of version control in reproducible
 research. Give an example (in 100--150 words) of a situation in which version
-control does not suffice to make a piece of work reproducible. Describe (in
-50--100 words) another popular tool that helps to make computational research
-reproducible.
+control alone does not suffice to make a piece of work reproducible. Describe
+(in 50--100 words) another popular tool that helps to make computational
+research reproducible.
 
 ** Question 3
 
