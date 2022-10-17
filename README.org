@@ -678,4 +678,5 @@ or would not be relevant to each rule.
 * Footnotes
 
 [fn:1] I use [[https://magit.vc/][magit]], which is nice if you already use emacs, but otherwise may be a bit weird.
+
 [fn:2] Legend has it, he named git after himself.
