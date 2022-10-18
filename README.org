@@ -603,16 +603,23 @@ the archive and the /live/ version of the code on GitHub in the manuscript.
 ** Learn more about GitHub
 
 There are lots of features in GitHub that haven't been covered but may be worth
-looking into: the issue tracker, the wiki, VSCode integration, and GitHub Pages
-and GitHub Actions.
+looking into:
+
+- the issue tracker,
+- the wiki,
+- VSCode integration,
+- GitHub Pages[fn:3],
+- and GitHub Actions.
 
 ** Alternative solutions
 
 *** Git
 
 Git has the greatest market share but there are alternatives such as Subversion,
-Mercurial, CVS and Darcs. Given that the vast majority of people use git, your
-time is probably best spent learning git.
+Mercurial, CVS and Darcs. Given that the overwhelming majority of people use
+git, your time is probably best spent learning git. As mentioned above, if you
+are going to be using git a fair bit, it is probably worth learning how to use a
+[[*Client][client]] as well.
 
 *** GitHub
 
@@ -627,8 +634,22 @@ your needs:
 *** Zenodo
 
 There are good general purpose alternatives to Zenodo such as [[https://figshare.com/][figshare]] and
-[[http://datadryad.org/][Dryad]]. There are also numerous alternatives that are more field specific, such
-as [[http://www.gisaid.org/][GISAID]].
+[[http://datadryad.org/][Dryad]]. Institutions and journals often have a favoured provider, but they are
+reasonably interchangeable. There are also numerous alternatives that are more
+field specific, such as [[http://www.gisaid.org/][GISAID]] for genomic data.
+
+*** Trusting a plain text file to describe my packages
+
+If you need additional assurance that your work will be reproducible, it may not
+be sufficient to use =sessionInfo= (or =pip freeze= for Python) to record the
+versions of the packages that you use. There are ways to capture a lot more
+information about the environment you are working in so it can be recreated by
+others. Unfortunately, these methods can be complex and require a lot of
+configuration. Some popular examples include
+
+- [[http://rstudio.github.io/packrat/][Packrat]] which helps manage R packages,
+- [[https://www.docker.com/][docker]] for a general purpose solution which is probably a bit overboard,
+- and [[https://nixos.org/][Nix]] for a general purpose solution that is definitely overboard.
 
 * Homework
 
@@ -639,18 +660,15 @@ command]]. I would recommend using something like RMarkdown.
 
 ** Question 1
 
-This question will assess your understanding of some tools that can assist with
-computational science. Explain (in 100--200 words) the roles of git, GitHub, and
-Zenodo, and then explain the relationship between these things. Describe the
-value of one feature of GitHub not covered in this tutorial (in 100--150 words).
+Explain (in 50--150 words) how the git, GitHub, and Zenodo complement each other
+and their respective roles. Describe the value of one of the [[*Learn more about GitHub][additional features
+of GitHub]] not covered in this tutorial (in 50--100 words).
 
 ** Question 2
 
-Explain (in 100--200 words) the function of version control in reproducible
-research. Give an example (in 100--150 words) of a situation in which version
-control alone does not suffice to make a piece of work reproducible. Describe
-(in 50--100 words) another popular tool that helps to make computational
-research reproducible.
+Explain (in 100--150 words) the function of version control in reproducible
+research. Give an example (in 50--100 words) where version control alone does
+not suffice to make a piece of work reproducible.
 
 ** Question 3
 
@@ -684,7 +702,7 @@ following steps:
 5. And finally, realising that something is wrong with =fig-a.png=!
 
 Referring to the [[https://github.com/aezarebski/biology-github-tutorial/commits/main][commit history]] of the repository, answer the following
-questions (in 150--250 words):
+questions (in 150--250 words *total*):
 
 1. What bug was introduced, and how would you fix it?
 2. How did you find the bug? How would you do this if the bug was subtle and
@@ -694,7 +712,7 @@ questions (in 150--250 words):
 ** Question 5
 
 Read the editorial [[https://doi.org/10.1371/journal.pcbi.1003285][Ten Simple Rules for Reproducible Computational Research]] and
-(in 200--300 words *total*) give a brief explanation of how git and GitHub would
+(in 150--250 words *total*) give a brief explanation of how git and GitHub would
 or would not be relevant to each rule.
 
 #  LocalWords:  VC TODO Stackoverflow DOI Zenodo stackoverflow png txt csv
@@ -705,3 +723,5 @@ or would not be relevant to each rule.
 [fn:1] I use [[https://magit.vc/][magit]], which is nice if you already use emacs, but otherwise may be a bit weird.
 
 [fn:2] Legend has it, he named git after himself.
+
+[fn:3] GitHub Pages offers free hosting of static websites. You may have accessed this tutorial via a GitHub Pages site.
