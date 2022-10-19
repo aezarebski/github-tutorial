@@ -253,10 +253,10 @@ and have a structure like the following.
 
 #+begin_example
 git-usage
-├── git-usage.png
-├── make-plot.R
-├── regression-summary.txt
-└── stackoverflow-git-data.csv
++-- git-usage.png
++-- make-plot.R
++-- regression-summary.txt
++-- stackoverflow-git-data.csv
 #+end_example
 
 In the next section we will go through cleaning this up so it is easier for
@@ -302,13 +302,13 @@ remember you can use =setwd= to specify the working directory.
 
 #+begin_example
 git-usage
-├── data
-│   └── stackoverflow-git-data.csv
-├── out
-│   ├── git-usage.png
-│   └── regression-summary.txt
-└── src
-    └── make-plot.R
++-- data
+|   +-- stackoverflow-git-data.csv
++-- out
+|   +-- git-usage.png
+|   +-- regression-summary.txt
++-- src
+    +-- make-plot.R
 #+end_example
 
 ** Uploading to GitHub
