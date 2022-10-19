@@ -1,4 +1,4 @@
-% Created 2022-10-19 Wed 10:53
+% Created 2022-10-19 Wed 11:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt,onecolumn]{scrartcl}
 \usepackage[utf8]{inputenc}
@@ -73,23 +73,23 @@
 
 
 \section{Introduction}
-\label{sec:org7f5db0c}
+\label{sec:org8b637bf}
 
 Welcome to \emph{Git, GitHub and Reproducible Research}! In this tutorial we will
 look at ways git and GitHub can help you with computational research, including
 how make it more reproducible. You will learn the fundamentals of git and gain
 practical experience in the use of GitHub. For those interested in learning more
-about version control, there is also a list of \hyperref[sec:org382c3cd]{additional resources} and some
-\hyperref[sec:org0dff573]{homework problems} at the end to test your understanding.
+about version control, there is also a list of \hyperref[sec:orge3fb595]{additional resources} and some
+\hyperref[sec:org4891c04]{homework problems} at the end to test your understanding.
 
-Please read through the \hyperref[sec:orga89c91d]{background material} first then follow along with the \hyperref[sec:org60d24a0]{worked example}. You do not need any special software installed (everything is
+Please read through the \hyperref[sec:org2a2c118]{background material} first then follow along with the \hyperref[sec:orgaf69dce]{worked example}. You do not need any special software installed (everything is
 done in the browser), however the worked example does make use of R and ggplot2.
 Installing \href{https://www.rstudio.com/}{RStudio} is probably the easiest way to utilise these software. If you
 find an error in this document, or would like to suggest an improvement, please
 make a note of this in the \href{https://github.com/aezarebski/github-tutorial/issues/new/choose}{issue tracker} on GitHub.
 
 \section{Disclaimer}
-\label{sec:orga393299}
+\label{sec:org2123b8a}
 
 These materials makes use of proprietary products and a simplified workflow in
 order to emphasise the main concepts and to save on installation and
@@ -100,14 +100,14 @@ easier to migrate to more advanced methods in the future should the need for
 them arise.
 
 \section{Background material}
-\label{sec:orga89c91d}
+\label{sec:org2a2c118}
 
 This section provides some context for why you might care about git, GitHub and
 reproducible research. This document only provides the absolute basics of these
 topics but should get you started with them and help direct further learning.
 
 \subsection{Version control}
-\label{sec:orgdf5adfc}
+\label{sec:org1c1a7a6}
 
 \emph{Version control} refers to systems which help to manage the writing and
 maintenance of things such as software, documents, and websites. These systems
@@ -118,7 +118,7 @@ Try coming back to that 3 months later when a reviewer asks you to re-run
 something with a slight modification!
 
 \subsubsection*{Reproducible research and Open research}
-\label{sec:org65b1d0f}
+\label{sec:org3e6411f}
 
 In addition to helping \textbf{you} with organising your files, a version control
 system and it's associated tooling can also help the scientific community by
@@ -131,92 +131,92 @@ available for others. Simply dumping all of your code into something like GitHub
 is not sufficient for your research to be considered reproducible.
 
 \subsection{Git}
-\label{sec:org0c9bf98}
+\label{sec:org3bfeae0}
 
 Created in 2005 by Linus Torvalds\footnote{Legend has it, he named git after himself.} to help with the development of the
 Linux kernel, git has become a fundamental tool for software development. In the
 2021 Stackoverflow Developer Survey over \(90\%\) of respondents used git; it is
 nearly synonymous with version control. If you intend to collaborate in the
 writing of substantial amounts of code, taking the time to learn how to use git
-is a good idea, at which point you may want to switch to a \hyperref[sec:org79866fc]{GUI interface} too.
+is a good idea, at which point you may want to switch to a \hyperref[sec:orga374b6c]{GUI interface} too.
 
 Working with git will be much easier if you get familiar with some of the
 terminology first. Unless you are familiar with git already, you should at least
 skim these before continuing.
 
 \subsubsection*{Repository}
-\label{sec:org831e358}
+\label{sec:org84e3e96}
 
 A \emph{repository} is a directory containing your files and the history of all the
-edits (see \hyperref[sec:orgacd33df]{commit}) made to these files. You can have a repository that only
+edits (see \hyperref[sec:org635a54d]{commit}) made to these files. You can have a repository that only
 lives on your machine, but they are often shared on a platform such as GitHub.
 
 \subsubsection*{Commit}
-\label{sec:orgacd33df}
+\label{sec:org635a54d}
 
 An edit to a file that you have recorded as part of the history of edits is
 called a \emph{commit}. It is both a noun and a verb, you commit an edit and the
-\hyperref[sec:org831e358]{repository} contains all of your commits. This can be thought of as a stronger
+\hyperref[sec:org84e3e96]{repository} contains all of your commits. This can be thought of as a stronger
 version of saving a file. Each commit gets a unique identifier (called a
 \emph{hash}). Sometimes we use "commit" to refer to the state of all the code after
 an edit.
 
 \subsubsection*{Clone}
-\label{sec:orgd1cebee}
+\label{sec:org4ed5260}
 
-When you make a copy of a \hyperref[sec:org831e358]{repository} you are \emph{cloning} that repository. The
+When you make a copy of a \hyperref[sec:org84e3e96]{repository} you are \emph{cloning} that repository. The
 resulting copy is referred to as a \emph{clone}. Typically this will mean you have
 downloaded a copy from a platform such as GitHub.
 
 \subsubsection*{Pull}
-\label{sec:org7e250db}
+\label{sec:org965efe9}
 
-Suppose you \hyperref[sec:orgd1cebee]{cloned} a repository a while ago and you want to get a copy of all
-the \hyperref[sec:orgacd33df]{commits} that have been made to the original repository since then. To get
+Suppose you \hyperref[sec:org4ed5260]{cloned} a repository a while ago and you want to get a copy of all
+the \hyperref[sec:org635a54d]{commits} that have been made to the original repository since then. To get
 these commits you \emph{pull} them, which is a fancy way of saying updating your
 files. This is sometimes referred to as \emph{fetching}. There are some subtle
 differences that you probably won't ever need.
 
 \subsubsection*{Push}
-\label{sec:orgf4b99c1}
+\label{sec:org36b0402}
 
-If you have \hyperref[sec:orgacd33df]{committed} some changes to your \hyperref[sec:orgd1cebee]{clone} of a \hyperref[sec:org831e358]{repository} and want the
+If you have \hyperref[sec:org635a54d]{committed} some changes to your \hyperref[sec:org4ed5260]{clone} of a \hyperref[sec:org84e3e96]{repository} and want the
 original repository to have these changes made, you \emph{push} these changes. This
 is a fancy way of saying use your edits to update the original files.
 
 \subsubsection*{Branch}
-\label{sec:orgf360103}
+\label{sec:org7358905}
 
-A \emph{branch} is similar to a \hyperref[sec:orgd1cebee]{clone} in that it is a copy of a \hyperref[sec:org831e358]{repository}. This
+A \emph{branch} is similar to a \hyperref[sec:org4ed5260]{clone} in that it is a copy of a \hyperref[sec:org84e3e96]{repository}. This
 provides a more sophisticated way for people to work on their own version of
 code, without messing up the main copy. This is not particularly important
 unless you are collaborating with others on a project.
 
 \subsubsection*{Merge}
-\label{sec:org1b8d383}
+\label{sec:org03d5d05}
 
-If someone has made some useful changes on their \hyperref[sec:orgf360103]{branch} the owner of the
+If someone has made some useful changes on their \hyperref[sec:org7358905]{branch} the owner of the
 repository may decide to include their commits in the main copy. This process of
 including the changes on someone's branch is called \emph{merging} the changes.
 
 \subsubsection*{Fork}
-\label{sec:org65b0fb2}
+\label{sec:org621e325}
 
 When you make a copy of a repository that sits on your GitHub account. This is
-similar to, (but distinct from) \hyperref[sec:orgd1cebee]{cloning} and making a \hyperref[sec:orgf360103]{branch}. Forking a
+similar to, (but distinct from) \hyperref[sec:org4ed5260]{cloning} and making a \hyperref[sec:org7358905]{branch}. Forking a
 repository is an important part of contributing code to other peoples' projects
 when using GitHub, however the details of this are beyond the scope of this
 tutorial.
 
 \subsubsection*{Pull request (a.k.a. PR)}
-\label{sec:orgeea630c}
+\label{sec:orgc4122fb}
 
 A pull request is a way to request that the owner of a repository accepts the
-changes you are proposing. As with \hyperref[sec:org65b0fb2]{forking}, the details are of this are beyond
+changes you are proposing. As with \hyperref[sec:org621e325]{forking}, the details are of this are beyond
 the scope of this tutorial.
 
 \subsubsection*{Client}
-\label{sec:org79866fc}
+\label{sec:orga374b6c}
 
 A \emph{git client} is a program that "simplifies" the use of git. We will only use
 the GitHub website in this tutorial because it handles most of this for us and
@@ -231,20 +231,20 @@ GitHub client}, but it requires some command line experience and for both RStudi
 and git to be installed on your machine.
 
 \subsection{GitHub}
-\label{sec:org2d84ea5}
+\label{sec:org1232ef2}
 
 \subsubsection*{What is GitHub?}
-\label{sec:org2476339}
+\label{sec:orgca41f57}
 
 GitHub, Inc. is a subsidiary of Microsoft. Their website provides freemium
 hosting of git repositories. In addition to hosting the repositories, it offers
 additional tools to assist with software development. We will use GitHub in this
 tutorial to avoid you needing to install anything on your machine. If you are
 going to use git extensively, it would be wise to learn how to do this from the
-command line or some other \hyperref[sec:org79866fc]{program}.
+command line or some other \hyperref[sec:orga374b6c]{program}.
 
 \subsubsection*{Setting up a GitHub account}
-\label{sec:orgd236c22}
+\label{sec:orgd63fcd7}
 
 To register an account you will need an email address that can be used for
 verification. A Gmail account makes this particularly easy.
@@ -261,7 +261,7 @@ them in the command palette.
 \end{enumerate}
 
 \subsection{Zenodo}
-\label{sec:orgdae0612}
+\label{sec:orgcb14131}
 
 Zenodo is an open access archive operated by CERN which allows researchers to
 archive research materials with a DOI which makes them easier to cite. This is a
@@ -270,7 +270,7 @@ commit of a repository which is good practice if you want to refer to a
 particular version of some code in a paper.
 
 \section{Worked example}
-\label{sec:org60d24a0}
+\label{sec:orgaf69dce}
 
 Now that we have an understanding of version control and its associated tooling,
 we can see an example of how this enables us to do more reproducible research.
@@ -281,19 +281,19 @@ of the resulting repository is available \href{https://github.com/aezarebski/git
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./git-usage-1.png}
+\includegraphics[width=8cm]{./git-usage-1.png}
 \caption{\label{fig:demo-result-1}The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line, the trend is not significant at \(95\%\).}
 \end{figure}
 
-We will start by looking at the \hyperref[sec:org1512595]{code and data} used in this analysis, then
-consider how one might \hyperref[sec:orgd51b455]{organise the files}. Once we have the code in a sensible
-state we can \hyperref[sec:org6a50630]{put it in a GitHub repository} and add some finishing touches such
-as a \hyperref[sec:org45b045c]{license}, some \hyperref[sec:org4c7e86a]{documentation}, and some additional \hyperref[sec:orgb36167d]{information about package
-versions}. We then consider the situation in which \hyperref[sec:org3488b09]{changes} need to be made by a
+We will start by looking at the \hyperref[sec:orgbabc6bb]{code and data} used in this analysis, then
+consider how one might \hyperref[sec:org6f95efd]{organise the files}. Once we have the code in a sensible
+state we can \hyperref[sec:org081bd1a]{put it in a GitHub repository} and add some finishing touches such
+as a \hyperref[sec:org0bd7a63]{license}, some \hyperref[sec:org1256f52]{documentation}, and some additional \hyperref[sec:orgab3fce7]{information about package
+versions}. We then consider the situation in which \hyperref[sec:org0f8e725]{changes} need to be made by a
 collaborator.
 
 \subsection{Code and data}
-\label{sec:org1512595}
+\label{sec:orgbabc6bb}
 
 Start by making a new directory called \texttt{git-usage} which will hold all our
 files. The data and the code that generated this figure are included below. This
@@ -358,7 +358,7 @@ In the next section we will go through cleaning this up so it is easier for
 people (including yourself in the future) to make sense of this.
 
 \subsection{Organising the data and code}
-\label{sec:orgd51b455}
+\label{sec:org6f95efd}
 
 As a first step we will use directories to impose a sensible structure to our
 files. Organising files in this way is useful as it makes it far easier for
@@ -411,18 +411,18 @@ git-usage
 \end{verbatim}
 
 \subsection{Uploading to GitHub}
-\label{sec:org6a50630}
+\label{sec:org081bd1a}
 
 Now that our code is in a reasonable state, we can upload it to GitHub. If you
-do not already have a GitHub account, please follow the instructions \hyperref[sec:orgd236c22]{above},
+do not already have a GitHub account, please follow the instructions \hyperref[sec:orgd63fcd7]{above},
 which describe how to make one. Once you have a GitHub account, you can follow
 the following steps to upload these files:
 
 \begin{enumerate}
-\item Visit \url{https://github.com/} and create a new \hyperref[sec:org831e358]{repository} by clicking \textbf{New}, you
+\item Visit \url{https://github.com/} and create a new \hyperref[sec:org84e3e96]{repository} by clicking \textbf{New}, you
 will need to pick a name for the repository (I called mine \texttt{git-usage}.) The
 default settings provided by GitHub are fine. Click \textbf{Create repository}.
-\item We now need to \hyperref[sec:orgacd33df]{commit} our files and \hyperref[sec:orgf4b99c1]{push} them to the remote repository.
+\item We now need to \hyperref[sec:org635a54d]{commit} our files and \hyperref[sec:org36b0402]{push} them to the remote repository.
 However, since we are doing this through GitHub, it is all combined into a
 single step. Click \textbf{Add file} and then \textbf{creating a new file} to start the
 process of adding the \texttt{src/make-plot.R} file.
@@ -440,7 +440,7 @@ file. In the case of the PNG image, \texttt{git-usage.png}, you will need to use
 \end{enumerate}
 
 \subsection{Making directories via GitHub}
-\label{sec:org9bc7694}
+\label{sec:orgc8eff1a}
 
 You cannot add an empty directory to a GitHub directory. If you want a new
 directory to be added, you need to commit a file to it. One convention for this
@@ -448,7 +448,7 @@ is to make an empty file in the desired directory (often this will be a file
 called \texttt{.gitkeep}).
 
 \subsection{Adding a license}
-\label{sec:org45b045c}
+\label{sec:org0bd7a63}
 
 A license specifies what people can do with your code. If you aren't sure what
 license suits your needs, you might find \url{https://choosealicense.com/} has some
@@ -462,7 +462,7 @@ you some templates to choose from. It will auto-fill the details of your name
 and the year.
 
 \subsection{Adding a README}
-\label{sec:org4c7e86a}
+\label{sec:org1256f52}
 
 When you encounter a repository online it can be difficult to understand what
 its purpose is and how to use it. "README" is the name given to a file that
@@ -470,7 +470,8 @@ contains this sort of information. Typically these will be written in markdown
 (similar to RMarkdown). Add a file called \texttt{README.md} to your repository with text
 similar to the following.
 
-\begin{verbatim}
+\lstset{language=sh,label= ,caption= ,captionpos=b,numbers=none}
+\begin{lstlisting}
 This repository contains an analysis of git usage through time.
 
 To run this analysis use the following command:
@@ -480,10 +481,10 @@ Rscript src/make-plot.R
 ```
 
 The input data is in `data` and the results are in `out`.
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Recording the session information}
-\label{sec:orgb36167d}
+\label{sec:orgab3fce7}
 
 Software gets updated, and sometimes these updates cause things to break. Where
 possible, it is very good practise to include details of the versions of
@@ -541,26 +542,26 @@ Once you are happy that this has worked, we need to commit these changes. First
 by editing the script, and second, add the \texttt{package-versions.txt} file.
 
 \subsection{Branching and merging}
-\label{sec:org3488b09}
+\label{sec:org0f8e725}
 
 Suppose that after doing all of this one of your collaborators wants to adjust
 the figure. We will now go through the steps involved with doing this using
 branches.
 
 \subsubsection*{Branching to make changes}
-\label{sec:org927d6f4}
+\label{sec:orga1fb63c}
 
 Figure \ref{fig:demo-result-2} is a modification of Figure \ref{fig:demo-result-1} with the
 desired changes.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./git-usage-2.png}
+\includegraphics[width=8cm]{./git-usage-2.png}
 \caption{\label{fig:demo-result-2}The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a grey line, the trend is not significant at \(95\%\).}
 \end{figure}
 
-To avoid making changes to the main copy of the code we will work on a \hyperref[sec:orgf360103]{branch},
-and then when we are happy with the changes we will \hyperref[sec:org1b8d383]{merge} them. To start with,
+To avoid making changes to the main copy of the code we will work on a \hyperref[sec:org7358905]{branch},
+and then when we are happy with the changes we will \hyperref[sec:org03d5d05]{merge} them. To start with,
 create a new branch by clicking on the drop-down menu labelled "main" as shown
 in Figure \ref{fig:create-new-branch}. I called it "edit-plot", but you can use
 anything other than "main" (because that is the default branch name used by
@@ -568,12 +569,12 @@ GitHub).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./create-new-branch.png}
+\includegraphics[width=8cm]{./create-new-branch.png}
 \caption{\label{fig:create-new-branch}Create a new branch using the drop-down menu.}
 \end{figure}
 
 \subsubsection*{Make desired edits to the code and output}
-\label{sec:org0ced9de}
+\label{sec:orgc9aefe7}
 
 \uline{Making sure that you are on your branch} --- if you're not sure, click on the
 \textbf{branch} button to double check --- edit the \texttt{make-plot.R} script so that it has the
@@ -609,19 +610,19 @@ your new branch to see how the files change between the two.
 One motivation for branches is that you can make exploratory changes without
 risking messing up your code on the main branch. If you have a collaborator that
 wanted to try something, they could do so on a separate branch and then, if you
-like their edits, you can \hyperref[sec:org1b8d383]{merge} them into \texttt{main} as we are about to do now.
+like their edits, you can \hyperref[sec:org03d5d05]{merge} them into \texttt{main} as we are about to do now.
 
 \subsubsection*{Merge the changes}
-\label{sec:orgcea974e}
+\label{sec:orge59f64c}
 
-To \hyperref[sec:org1b8d383]{merge} your changes via the website, go back to the main page of the
+To \hyperref[sec:org03d5d05]{merge} your changes via the website, go back to the main page of the
 repository and you should see a new button, like the one shown in Figure
 \ref{fig:pull-request}, inviting you to compare the changes on this branch, i.e., to
 inspect if you consider this work worthy of inclusion.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./pull-request.png}
+\includegraphics[width=8cm]{./pull-request.png}
 \caption{\label{fig:pull-request}A button appears to invite you to compare branches.}
 \end{figure}
 
@@ -631,17 +632,17 @@ create a pull request by clicking the button as shown in Figure
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./create-pull-request.png}
+\includegraphics[width=8cm]{./create-pull-request.png}
 \caption{\label{fig:create-pull-request}If you are happy with the content of a branch, you can create a pull request.}
 \end{figure}
 
-Once you have created the pull request, the next step is to \hyperref[sec:org1b8d383]{merge} that branch
+Once you have created the pull request, the next step is to \hyperref[sec:org03d5d05]{merge} that branch
 into the \texttt{main} branch. To do this you just need to click the button shown in
 Figure \ref{fig:merge-pull-request}.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./merge-pull-request.png}
+\includegraphics[width=8cm]{./merge-pull-request.png}
 \caption{\label{fig:merge-pull-request}If you accept a pull request you can merge the changes with the Merge pull request button.}
 \end{figure}
 
@@ -652,7 +653,7 @@ this.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./delete-branch.png}
+\includegraphics[width=8cm]{./delete-branch.png}
 \caption{\label{fig:delete-branch}Deleting a branch after it has been merged keeps the repository tidy.}
 \end{figure}
 
@@ -660,30 +661,30 @@ At this point you should only have a single branch left and it should have the
 modifications to the figure. Congratulations on a reproducible analysis!
 
 \section{Next steps and alternative solutions}
-\label{sec:org382c3cd}
+\label{sec:orge3fb595}
 
 \subsection{Help! I just want to download the files}
-\label{sec:org56321ce}
+\label{sec:org80479c8}
 
 If you want to download the files from GitHub and do not want any of the
 associated git functionality, you can download a ZIP file that contains the
 contents of a repository. Figure \ref{fig:download-zip-file} shows the menu for
 downloading a ZIP file containing the contents of a repository. If you want to
-use any of git's features though you should \hyperref[sec:orgd1cebee]{clone} the repository instead.
+use any of git's features though you should \hyperref[sec:org4ed5260]{clone} the repository instead.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=.9\linewidth]{./download-zip-file.png}
+\includegraphics[width=8cm]{./download-zip-file.png}
 \caption{\label{fig:download-zip-file}You can download a ZIP file containing the contents of a repository from GitHub.}
 \end{figure}
 
 \subsection{What if I am using Python, or some other language?}
-\label{sec:org0a27de3}
+\label{sec:orgb51dd91}
 
 We have used the R programming language in this tutorial, but how we use GitHub
 is language agnostic (for the most part). Most of the time, organising your data
 and source code in this way is a good idea. Different programming languages
-record their package versions in different ways. Recall in \hyperref[sec:orgb36167d]{this section} that we
+record their package versions in different ways. Recall in \hyperref[sec:orgab3fce7]{this section} that we
 generated a file containing the package versions. For the Python language, there
 is the pip function. Running \texttt{pip freeze} at the command line will print out the
 package versions. You can pipe this information to a text file (which is
@@ -700,7 +701,7 @@ isolated group of packages used for a project. If you want understand how to do
 this, see the relevant \href{https://docs.python.org/3/tutorial/venv.html}{python documentation}.
 
 \subsection{Upload to Zenodo}
-\label{sec:org2602309}
+\label{sec:org303ed6c}
 
 The \href{https://help.zenodo.org/}{Zenodo FAQs} contain information about how to archive a GitHub repository if
 you want a more permanent form of storage. Ideally, one would archive the commit
@@ -708,7 +709,7 @@ used to generate the contents of a manuscript so it has a DOI and reference both
 the archive and the \emph{live} version of the code on GitHub in the manuscript.
 
 \subsection{Learn more about git}
-\label{sec:org96fe516}
+\label{sec:org120c1a0}
 
 \begin{itemize}
 \item \href{https://git-scm.com/book/en/v2}{Pro Git} by Scott Chacon and Ben Straub is a free book that is the ultimate
@@ -723,7 +724,7 @@ scenes tour of how git works.
 \end{itemize}
 
 \subsection{Learn more about GitHub}
-\label{sec:org8cdcd55}
+\label{sec:org8b5272a}
 
 There are lots of features in GitHub that haven't been covered but may be worth
 looking into:
@@ -737,19 +738,19 @@ looking into:
 \end{itemize}
 
 \subsection{Alternative solutions}
-\label{sec:orgea7862d}
+\label{sec:orgcca088f}
 
 \subsubsection*{Git}
-\label{sec:org7a449d2}
+\label{sec:org6d5e477}
 
 Git has the greatest market share but there are alternatives such as Subversion,
 Mercurial, CVS and Darcs. Given that the overwhelming majority of people use
 git, your time is probably best spent learning git. As mentioned above, if you
 are going to be using git a fair bit, it is probably worth learning how to use a
-\hyperref[sec:org79866fc]{client} as well.
+\hyperref[sec:orga374b6c]{client} as well.
 
 \subsubsection*{GitHub}
-\label{sec:orgc9e6d49}
+\label{sec:org4eb9376}
 
 While git dominates the market as the choice of version control system, there
 are many viable alternatives platforms to GitHub which may be more suitable for
@@ -762,7 +763,7 @@ your needs:
 \end{itemize}
 
 \subsubsection*{Zenodo}
-\label{sec:orgfda500d}
+\label{sec:org4a5a146}
 
 There are good general purpose alternatives to Zenodo such as \href{https://figshare.com/}{figshare} and
 \href{http://datadryad.org/}{Dryad}. Institutions and journals often have a favoured provider, but they are
@@ -770,7 +771,7 @@ reasonably interchangeable. There are also numerous alternatives that are more
 field specific, such as \href{http://www.gisaid.org/}{GISAID} for genomic data.
 
 \subsubsection*{Trusting a plain text file to describe my packages}
-\label{sec:org497920b}
+\label{sec:org2102da3}
 
 If you need additional assurance that your work will be reproducible, it may not
 be sufficient to use \texttt{sessionInfo} (or \texttt{pip freeze} for Python) to record the
@@ -786,7 +787,7 @@ configuration. Some popular examples include
 \end{itemize}
 
 \section{Homework}
-\label{sec:org0dff573}
+\label{sec:org4891c04}
 
 Please ensure that in answering these questions, you use a format that is easy
 to read and supports hyperlinks. The ability to include chunks of code (or
@@ -794,21 +795,21 @@ mono-spaced fonts) may be useful. You want to display the output of the \href{ht
 command}. I would recommend using something like RMarkdown.
 
 \subsection{Question 1}
-\label{sec:orgae719ba}
+\label{sec:org1011beb}
 
 Explain (in 50--150 words) how the git, GitHub, and Zenodo complement each other
-and their respective roles. Describe the value of one of the \hyperref[sec:org8cdcd55]{additional features
+and their respective roles. Describe the value of one of the \hyperref[sec:org8b5272a]{additional features
 of GitHub} not covered in this tutorial (in 50--100 words).
 
 \subsection{Question 2}
-\label{sec:orgdc09e91}
+\label{sec:org68869e9}
 
 Explain (in 100--150 words) the function of version control in reproducible
 research. Give an example (in 50--100 words) where version control alone does
 not suffice to make a piece of work reproducible.
 
 \subsection{Question 3}
-\label{sec:org798c2ea}
+\label{sec:org4303d57}
 
 This question will test your ability to organise the artefacts of a
 computational project. Download the scripts and data files using the links below
@@ -829,7 +830,7 @@ your submission.
 If you cannot download these files directly, they should also be available \href{https://github.com/aezarebski/github-tutorial/tree/main/homework-question-3}{here}.
 
 \subsection{Question 4}
-\label{sec:orgf2e5c51}
+\label{sec:org8fc4658}
 
 This \href{https://github.com/aezarebski/biology-github-tutorial}{repository} contains an attempt at visualising two datasets. Unfortunately,
 a bug was introduced somewhere during that attempt. The attempt consisted of the
@@ -855,7 +856,7 @@ there were hundreds of files and thousands of commits?
 \end{enumerate}
 
 \subsection{Question 5}
-\label{sec:org1a3b846}
+\label{sec:org5e3ef8f}
 
 Read the editorial \href{https://doi.org/10.1371/journal.pcbi.1003285}{Ten Simple Rules for Reproducible Computational Research} and
 (in 150--250 words \textbf{total}) give a brief explanation of how git and GitHub would
