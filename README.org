@@ -1,7 +1,10 @@
 #+title: Git, GitHub and Reproducible Research
 #+author: Alexander E. Zarebski
 #+options: num:2 toc:2
+#+latex_class: scrartcl
 #+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
+
+* Introduction
 
 Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will
 look at ways git and GitHub can help you with computational research, including
@@ -205,14 +208,14 @@ Start by making a new directory called =git-usage= which will hold all our
 files. The data and the code that generated this figure are included below. This
 data should be saved in a called =stackoverflow-git-data.csv=.
 
-#+begin_src csv
+#+begin_example
 year,percentage
 2015,69.3
 2017,69.2
 2018,87.2
 2020,82.8
 2021,93.43
-#+end_src
+#+end_example
 
 We then need a script to carry out the analysis. Save the following code in a
 file called =make-plot.R=
@@ -363,7 +366,7 @@ contains this sort of information. Typically these will be written in markdown
 (similar to RMarkdown). Add a file called =README.md= to your repository with text
 similar to the following.
 
-#+begin_src markdown
+#+begin_example
   This repository contains an analysis of git usage through time.
 
   To run this analysis use the following command:
@@ -373,7 +376,7 @@ similar to the following.
   ```
 
   The input data is in `data` and the results are in `out`.
-#+end_src
+#+end_example
 
 ** Recording the session information
 
