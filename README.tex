@@ -14,6 +14,7 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{fancyvrb}
 \definecolor{base03}{HTML}{002b36}
 \definecolor{base02}{HTML}{073642}
 \definecolor{base01}{HTML}{586e75}
@@ -51,6 +52,13 @@ keywordstyle=\color{base02},
 commentstyle=\color{base02},
 stringstyle=\color{cyan}
 }
+\usepackage[
+figurename=Figure,
+font={sf,small},
+format=plain,
+labelfont=bf,
+width=0.7\textwidth
+]{caption}
 \setcounter{secnumdepth}{2}
 \author{Alexander E. Zarebski}
 \date{\today}
@@ -296,14 +304,14 @@ Start by making a new directory called \texttt{git-usage} which will hold all ou
 files. The data and the code that generated this figure are included below. This
 data should be saved in a called \texttt{stackoverflow-git-data.csv}.
 
-\begin{verbatim}
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Git Usage,xleftmargin=5cm,xrightmargin=5cm]
 year,percentage
 2015,69.3
 2017,69.2
 2018,87.2
 2020,82.8
 2021,93.43
-\end{verbatim}
+\end{Verbatim}
 
 We then need a script to carry out the analysis. Save the following code in a
 file called \texttt{make-plot.R}
@@ -343,13 +351,13 @@ sink()
 Once we have run the \texttt{make-plot.R} script, the directory should contain four files
 and have a structure like the following.
 
-\begin{verbatim}
-git-usage
-+-- git-usage.png
-+-- make-plot.R
-+-- regression-summary.txt
-+-- stackoverflow-git-data.csv
-\end{verbatim}
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Directory contents,xleftmargin=3cm,xrightmargin=3cm]
+  git-usage
+  +-- git-usage.png
+  +-- make-plot.R
+  +-- regression-summary.txt
+  +-- stackoverflow-git-data.csv
+\end{Verbatim}
 
 In the next section we will go through cleaning this up so it is easier for
 people (including yourself in the future) to make sense of this.
@@ -396,7 +404,7 @@ directory structure should look like the following. Note how the output files
 now appear in the \texttt{out} directory. If you are running the script from an R REPL,
 remember you can use \texttt{setwd} to specify the working directory.
 
-\begin{verbatim}
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Git Usage,xleftmargin=3cm,xrightmargin=3cm]
 git-usage
 +-- data
 |   +-- stackoverflow-git-data.csv
@@ -405,7 +413,7 @@ git-usage
 |   +-- regression-summary.txt
 +-- src
     +-- make-plot.R
-\end{verbatim}
+\end{Verbatim}
 
 \subsection{Uploading to GitHub}
 \label{sec:org081bd1a}
@@ -500,7 +508,7 @@ version of R you used and the versions of all the loaded packages to the file
 \texttt{out/package-versions.txt}. Try running the script again to make sure this
 additional file was generated and contains something similar to the following.
 
-\begin{verbatim}
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Session information,xleftmargin=5mm,xrightmargin=5mm,fontsize=\small]
 R version 4.1.2 (2021-11-01)
 Platform: x86_64-pc-linux-gnu (64-bit)
 Running under: Ubuntu 20.04.3 LTS
@@ -533,7 +541,7 @@ loaded via a namespace (and not attached):
 [25] purrr_0.3.4      vctrs_0.3.8      glue_1.6.0       labeling_0.4.2
 [29] compiler_4.1.2   pillar_1.6.4     generics_0.1.1   scales_1.1.1
 [33] pkgconfig_2.0.3
-\end{verbatim}
+\end{Verbatim}
 
 Once you are happy that this has worked, we need to commit these changes. First
 by editing the script, and second, add the \texttt{package-versions.txt} file.
