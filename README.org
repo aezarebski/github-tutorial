@@ -1,11 +1,63 @@
 #+title: Git, GitHub and Reproducible Research
 #+author: Alexander E. Zarebski
 #+options: num:2 toc:2
+#+latex_class: scrartcl
 #+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
 
+#+latex_header: \definecolor{base03}{HTML}{002b36}
+#+latex_header: \definecolor{base02}{HTML}{073642}
+#+latex_header: \definecolor{base01}{HTML}{586e75}
+#+latex_header: \definecolor{base00}{HTML}{657b83}
+#+latex_header: \definecolor{base0}{HTML}{839496}
+#+latex_header: \definecolor{base1}{HTML}{93a1a1}
+#+latex_header: \definecolor{base2}{HTML}{eee8d5}
+#+latex_header: \definecolor{base3}{HTML}{fdf6e3}
+#+latex_header: \definecolor{yellow}{HTML}{b58900}
+#+latex_header: \definecolor{orange}{HTML}{cb4b16}
+#+latex_header: \definecolor{red}{HTML}{dc322f}
+#+latex_header: \definecolor{magenta}{HTML}{d33682}
+#+latex_header: \definecolor{violet}{HTML}{6c71c4}
+#+latex_header: \definecolor{blue}{HTML}{268bd2}
+#+latex_header: \definecolor{cyan}{HTML}{2aa198}
+#+latex_header: \definecolor{green}{HTML}{859900}
+#+latex_header: \lstset{
+#+latex_header:   language=R,
+#+latex_header:   linewidth=0.95\textwidth,
+#+latex_header:   xleftmargin=0.05\textwidth,
+#+latex_header:   basicstyle=\small\ttfamily\color{base02},
+#+latex_header:   backgroundcolor=\color{base3},
+#+latex_header:   showspaces=false,
+#+latex_header:   showstringspaces=false,
+#+latex_header:   showtabs=false,
+#+latex_header:   frame=single,
+#+latex_header:   frameround=tttt,
+#+latex_header:   float=p,
+#+latex_header:   rulecolor=\color{base03},
+#+latex_header:   tabsize=2,
+#+latex_header:   captionpos=b,
+#+latex_header:   breaklines=true,
+#+latex_header:   breakatwhitespace=false,
+#+latex_header:   keywordstyle=\color{base02},
+#+latex_header:   commentstyle=\color{base02},
+#+latex_header:   stringstyle=\color{cyan}
+#+latex_header: }
+
+#+latex_header: \usepackage{fancyvrb}
+#+latex_header: \usepackage[
+#+latex_header: figurename=Figure,
+#+latex_header: font={sf,small},
+#+latex_header: format=plain,
+#+latex_header: labelfont=bf,
+#+latex_header: width=0.7\textwidth
+#+latex_header: ]{caption}
+
+* Introduction
+
 Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will
-look at ways git and GitHub can help you with computational research, including
-how make it more reproducible. You will learn the fundamentals of git and gain
+look at ways git and GitHub can help you with your computational research,
+including how make it more reproducible. This is good for science as a whole as
+it means others can build upon your work, but it is also good for you to help
+you keep track of your projects. You will learn the fundamentals of git and gain
 practical experience in the use of GitHub. For those interested in learning more
 about version control, there is also a list of [[*Next steps and alternative solutions][additional resources]] and some
 [[*Homework][homework problems]] at the end to test your understanding.
@@ -17,43 +69,44 @@ Installing [[https://www.rstudio.com/][RStudio]] is probably the easiest way to 
 find an error in this document, or would like to suggest an improvement, please
 make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
 
-* Disclaimer
+** Disclaimer
 
 These materials makes use of proprietary products and a simplified workflow in
 order to emphasise the main concepts and to save on installation and
 configuration time. Some references will be given at the end to direct you to
-free and open source solutions and more sustainable workflows; the core ideas
-are the same though, so understanding the material given here should make it
-easier to migrate to more advanced methods in the future should the need for
-them arise.
+free and open source solutions and more sustainable workflows. The core ideas we
+will see are largely the same regardless of the software you use, so
+understanding this material should make it much easier to migrate to more
+sophisticated methods in the future, should the need for them arise.
 
 * Background material
 
-This section provides some context for why you might care about git, GitHub and
-reproducible research. This document only provides the absolute basics of these
-topics but should get you started with them and help direct further learning.
+This section provides some basic information about version control, git, and
+GitHub. These are complicated programs so we will only see some of the basic
+features today; it should be enough to get you started should you want to learn
+more though.
 
-** Version control
+** Version control systems (VCSs)
 
-/Version control/ refers to systems which help to manage the writing and
+A /version control system/ (VCS) is a system to help manage the writing and
 maintenance of things such as software, documents, and websites. These systems
 were developed to manage large software projects but are useful at many levels.
 For example, version control can help you avoid the following situation:
 =my-analysis.R=, =my-analysis-final.R=, =my-analysis-final-again.R=, and so on.
 Try coming back to that 3 months later when a reviewer asks you to re-run
-something with a slight modification!
+something with a slight modification! Similar to the way in which an interactive
+debugger allows you to step through the evaluation of your program, version
+control allows you to step through the process in which the code was written.
+You can think of it as an extreme version of undo/redo.
 
-*** Reproducible research and Open research
-
-In addition to helping *you* with organising your files, a version control
-system and it's associated tooling can also help the scientific community by
-helping to make your research reproducible and open.
-
-For your computational research to be considered /reproducible,/ it needs to be
-described in such a way that others can replicate your results. For it to be
-/open/, the materials (code, data and sufficient documentation) need to be
-available for others. Simply dumping all of your code into something like GitHub
-is not sufficient for your research to be considered reproducible.
+In addition to helping you organise your files, a version control system (VCS)
+and its associated tooling can help the scientific community by making your
+research reproducible and open. For your computational research to be considered
+/reproducible,/ it needs to be described in such a way that others can replicate
+your results. For it to be /open/, the materials (code, data and sufficient
+documentation to use it) need to be available for others. Simply dumping all of
+your code into something like GitHub is not sufficient for your research to be
+considered reproducible.
 
 ** Git
 
@@ -62,17 +115,18 @@ Linux kernel, git has become a fundamental tool for software development. In the
 2021 Stackoverflow Developer Survey over \(90\%\) of respondents used git; it is
 nearly synonymous with version control. If you intend to collaborate in the
 writing of substantial amounts of code, taking the time to learn how to use git
-is a good idea, at which point you may want to switch to a [[*Client][GUI interface]] too.
+is a good idea. This can be made easier by learning to use a [[*Client][GUI interface]] too.
 
-Working with git will be much easier if you get familiar with some of the
-terminology first. Unless you are familiar with git already, you should at least
-skim these before continuing.
+Working with git will be much easier once you are familiar with some of the
+terminology (there is a lot). Unless you are familiar with git already, you
+should at least skim these before continuing.
 
 *** Repository
 
-A /repository/ is a directory containing your files and the history of all the
-edits (see [[*Commit][commit]]) made to these files. You can have a repository that only
-lives on your machine, but they are often shared on a platform such as GitHub.
+A /repository/ (a.k.a. a /repo/) is a directory (a.k.a. folder) containing your
+files and the history of the edits (see [[*Commit][commit]]) you have made to these files.
+You can have a (local) repository that only lives on your machine, but they are
+often shared on a platform such as GitHub.
 
 *** Commit
 
@@ -81,13 +135,18 @@ called a /commit/. It is both a noun and a verb, you commit an edit and the
 [[*Repository][repository]] contains all of your commits. This can be thought of as a stronger
 version of saving a file. Each commit gets a unique identifier (called a
 /hash/). Sometimes we use "commit" to refer to the state of all the code after
-an edit.
+an edit. If you want to go back to the version of your code from three weeks
+ago, you just checkout the commit from that date and all the files will return
+to the state they were in at that time.
 
 *** Clone
 
 When you make a copy of a [[*Repository][repository]] you are /cloning/ that repository. The
 resulting copy is referred to as a /clone/. Typically this will mean you have
-downloaded a copy from a platform such as GitHub.
+downloaded a copy from a platform such as GitHub. Note that downloading a ZIP
+file with the contents of a repository is not necessarily the same as cloning
+it, when you download the ZIP file you'll get the files, but you may not get the
+history of commits associated with them.
 
 *** Pull
 
@@ -100,21 +159,24 @@ differences that you probably won't ever need.
 *** Push
 
 If you have [[*Commit][committed]] some changes to your [[*Clone][clone]] of a [[*Repository][repository]] and want the
-original repository to have these changes made, you /push/ these changes. This
-is a fancy way of saying use your edits to update the original files.
+original repository to have these changes as well, you /push/ these changes.
+This is a fancy way of saying use your edits to update the original files.
 
 *** Branch
 
 A /branch/ is similar to a [[*Clone][clone]] in that it is a copy of a [[*Repository][repository]]. This
 provides a more sophisticated way for people to work on their own version of
 code, without messing up the main copy. This is not particularly important
-unless you are collaborating with others on a project.
+unless you are collaborating with others on a project. It provides a safe way to
+experiment with your code without risking messing up your "good copy".
 
 *** Merge
 
 If someone has made some useful changes on their [[*Branch][branch]] the owner of the
 repository may decide to include their commits in the main copy. This process of
-including the changes on someone's branch is called /merging/ the changes.
+including the changes on someone's branch is called /merging/ the changes. As
+with branches, this is likely only to be relevant if you are collaborating with
+others on your code.
 
 *** Fork
 
@@ -132,17 +194,19 @@ the scope of this tutorial.
 
 *** Client
 
-A /git client/ is a program that "simplifies" the use of git. We will only use
-the GitHub website in this tutorial because it handles most of this for us and
-avoids any complicated installation. If you are going to be making substantial
-use of git, I would recommend getting a client and learning how to use it.
-[[https://desktop.github.com/][GitHub Desktop]] and [[https://www.sourcetreeapp.com/][Sourcetree]] are both free options developed by major companies
-so should be very friendly[fn:1].
+A /git client/ is a program that "simplifies" the use of git by hiding some of
+the details and giving you GUI to click buttons on rather than typing mysterious
+text at the command line. We will use the GitHub website in this tutorial
+because it handles most of this for us and avoids any complicated installation.
+If you are going to be making substantial use of git, I would recommend getting
+a client and learning how to use it. [[https://desktop.github.com/][GitHub Desktop]] and [[https://www.sourcetreeapp.com/][Sourcetree]] are both free
+options and are developed by major companies so should have excellent
+documentation and be easy to use[fn:1].
 
-If you are already using RStudio, you might also be interested in the features
-it provides for version control. There is a [[https://resources.github.com/github-and-rstudio/][tutorial on using RStudio as a
-GitHub client]], but it requires some command line experience and for both RStudio
-and git to be installed on your machine.
+If you are already using RStudio, you might be interested in the features it
+provides for version control. There is a [[https://resources.github.com/github-and-rstudio/][tutorial on using RStudio as a GitHub
+client]], but it requires some command line experience and for both RStudio and
+git to be installed on your machine.
 
 ** GitHub
 
@@ -153,15 +217,18 @@ hosting of git repositories. In addition to hosting the repositories, it offers
 additional tools to assist with software development. We will use GitHub in this
 tutorial to avoid you needing to install anything on your machine. If you are
 going to use git extensively, it would be wise to learn how to do this from the
-command line or some other [[*Client][program]].
+command line or some other [[*Client][program]]. Please don't mistake git and GitHub, one is
+a piece of software, the other is a platform that uses this software.
 
 *** Setting up a GitHub account
 
 To register an account you will need an email address that can be used for
-verification. A Gmail account makes this particularly easy.
+verification. A Gmail account makes this particularly easy. Please follow the
+following steps to register an account:
 
 1. Visit [[https://github.com/]] and click *Sign Up*.
-2. Fill in the forms to create an account.
+2. Fill in the forms to create an account. *ProTip:* Choose your username
+   wisely!
 3. Verify that account by entering the access code GitHub sends to the email
    address you registered with.
 4. Verify that you can summon the *Command Palette* with =crtl k= for Windows
@@ -169,13 +236,16 @@ verification. A Gmail account makes this particularly easy.
 5. The appearance and accessibility settings can be reached by searching for
    them in the command palette.
 
+You will need an account to complete the worked example below.
+
 ** Zenodo
 
 Zenodo is an open access archive operated by CERN which allows researchers to
-archive research materials with a DOI which makes them easier to cite. This is a
-more permanent form of storage than GitHub. It is easy to archive a particular
-commit of a repository which is good practice if you want to refer to a
-particular version of some code in a paper.
+archive research materials with a DOI[fn:4] which makes them easier to find and
+cite. This is a more permanent form of storage than GitHub. It is easy to
+archive a particular commit of a repository which is good practice if you want
+to refer to a particular version of some code in a paper. GitHub has tooling for
+this build in.
 
 * Worked example
 
@@ -189,6 +259,7 @@ of the resulting repository is available [[https://github.com/aezarebski/git-usa
 #+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a blue line, the trend is not significant at \(95\%\).
 #+name: fig:demo-result-1
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./git-usage-1.png]]
 
@@ -205,14 +276,25 @@ Start by making a new directory called =git-usage= which will hold all our
 files. The data and the code that generated this figure are included below. This
 data should be saved in a called =stackoverflow-git-data.csv=.
 
-#+begin_src csv
+#+begin_export latex
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Git Usage,xleftmargin=5cm,xrightmargin=5cm]
 year,percentage
 2015,69.3
 2017,69.2
 2018,87.2
 2020,82.8
 2021,93.43
-#+end_src
+\end{Verbatim}
+#+end_export
+
+#+begin_example
+year,percentage
+2015,69.3
+2017,69.2
+2018,87.2
+2020,82.8
+2021,93.43
+#+end_example
 
 We then need a script to carry out the analysis. Save the following code in a
 file called =make-plot.R=
@@ -251,12 +333,22 @@ file called =make-plot.R=
 Once we have run the =make-plot.R= script, the directory should contain four files
 and have a structure like the following.
 
+#+begin_export latex
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Directory contents,xleftmargin=3cm,xrightmargin=3cm]
+  git-usage
+  +-- git-usage.png
+  +-- make-plot.R
+  +-- regression-summary.txt
+  +-- stackoverflow-git-data.csv
+\end{Verbatim}
+#+end_export
+
 #+begin_example
 git-usage
-├── git-usage.png
-├── make-plot.R
-├── regression-summary.txt
-└── stackoverflow-git-data.csv
++-- git-usage.png
++-- make-plot.R
++-- regression-summary.txt
++-- stackoverflow-git-data.csv
 #+end_example
 
 In the next section we will go through cleaning this up so it is easier for
@@ -300,15 +392,28 @@ directory structure should look like the following. Note how the output files
 now appear in the =out= directory. If you are running the script from an R REPL,
 remember you can use =setwd= to specify the working directory.
 
+#+begin_export latex
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Git Usage,xleftmargin=3cm,xrightmargin=3cm]
+git-usage
++-- data
+|   +-- stackoverflow-git-data.csv
++-- out
+|   +-- git-usage.png
+|   +-- regression-summary.txt
++-- src
+    +-- make-plot.R
+\end{Verbatim}
+#+end_export
+
 #+begin_example
 git-usage
-├── data
-│   └── stackoverflow-git-data.csv
-├── out
-│   ├── git-usage.png
-│   └── regression-summary.txt
-└── src
-    └── make-plot.R
++-- data
+|   +-- stackoverflow-git-data.csv
++-- out
+|   +-- git-usage.png
+|   +-- regression-summary.txt
++-- src
+    +-- make-plot.R
 #+end_example
 
 ** Uploading to GitHub
@@ -363,7 +468,7 @@ contains this sort of information. Typically these will be written in markdown
 (similar to RMarkdown). Add a file called =README.md= to your repository with text
 similar to the following.
 
-#+begin_src markdown
+#+begin_src sh
   This repository contains an analysis of git usage through time.
 
   To run this analysis use the following command:
@@ -392,6 +497,43 @@ The next time that you run this script, it will write a description of the
 version of R you used and the versions of all the loaded packages to the file
 =out/package-versions.txt=. Try running the script again to make sure this
 additional file was generated and contains something similar to the following.
+
+#+begin_export latex
+\begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Session information,xleftmargin=5mm,xrightmargin=5mm,fontsize=\small]
+R version 4.1.2 (2021-11-01)
+Platform: x86_64-pc-linux-gnu (64-bit)
+Running under: Ubuntu 20.04.3 LTS
+
+Matrix products: default
+BLAS:   /usr/local/lib/R/lib/libRblas.so
+LAPACK: /usr/local/lib/R/lib/libRlapack.so
+
+locale:
+ [1] LC_CTYPE=en_GB.UTF-8       LC_NUMERIC=C
+ [3] LC_TIME=en_GB.UTF-8        LC_COLLATE=en_GB.UTF-8
+ [5] LC_MONETARY=en_GB.UTF-8    LC_MESSAGES=en_GB.UTF-8
+ [7] LC_PAPER=en_GB.UTF-8       LC_NAME=C
+ [9] LC_ADDRESS=C               LC_TELEPHONE=C
+[11] LC_MEASUREMENT=en_GB.UTF-8 LC_IDENTIFICATION=C
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base
+
+other attached packages:
+[1] ggplot2_3.3.5
+
+loaded via a namespace (and not attached):
+ [1] magrittr_2.0.1   splines_4.1.2    tidyselect_1.1.1 munsell_0.5.0
+ [5] colorspace_2.0-2 lattice_0.20-45  R6_2.5.1         rlang_0.4.12
+ [9] fansi_0.5.0      dplyr_1.0.7      tools_4.1.2      grid_4.1.2
+[13] gtable_0.3.0     nlme_3.1-153     mgcv_1.8-38      utf8_1.2.2
+[17] withr_2.4.3      ellipsis_0.3.2   digest_0.6.29    tibble_3.1.6
+[21] lifecycle_1.0.1  crayon_1.4.2     Matrix_1.3-4     farver_2.1.0
+[25] purrr_0.3.4      vctrs_0.3.8      glue_1.6.0       labeling_0.4.2
+[29] compiler_4.1.2   pillar_1.6.4     generics_0.1.1   scales_1.1.1
+[33] pkgconfig_2.0.3
+\end{Verbatim}
+#+end_export
 
 #+begin_example
 R version 4.1.2 (2021-11-01)
@@ -445,6 +587,7 @@ desired changes.
 #+caption: The percentage of developers who use git has increased since 2015. Data from the Stackoverflow Developer Survey is shown as black points and a least squares regression is shown as a grey line, the trend is not significant at \(95\%\).
 #+name: fig:demo-result-2
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./git-usage-2.png]]
 
@@ -458,6 +601,7 @@ GitHub).
 #+caption: Create a new branch using the drop-down menu.
 #+name: fig:create-new-branch
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./create-new-branch.png]]
 
@@ -508,6 +652,7 @@ inspect if you consider this work worthy of inclusion.
 #+caption: A button appears to invite you to compare branches.
 #+name: fig:pull-request
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./pull-request.png]]
 
@@ -518,6 +663,7 @@ create a pull request by clicking the button as shown in Figure
 #+caption: If you are happy with the content of a branch, you can create a pull request.
 #+name: fig:create-pull-request
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./create-pull-request.png]]
 
@@ -528,6 +674,7 @@ Figure [[fig:merge-pull-request]].
 #+caption: If you accept a pull request you can merge the changes with the Merge pull request button.
 #+name: fig:merge-pull-request
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./merge-pull-request.png]]
 
@@ -539,6 +686,7 @@ this.
 #+caption: Deleting a branch after it has been merged keeps the repository tidy.
 #+name: fig:delete-branch
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./delete-branch.png]]
 
@@ -558,6 +706,7 @@ use any of git's features though you should [[*Clone][clone]] the repository ins
 #+caption: You can download a ZIP file containing the contents of a repository from GitHub.
 #+name: fig:download-zip-file
 #+attr_org: :width 500px
+#+attr_latex: :width 8cm
 #+attr_html: :width 500px
 [[./download-zip-file.png]]
 
@@ -725,3 +874,5 @@ or would not be relevant to each rule.
 [fn:2] Legend has it, he named git after himself.
 
 [fn:3] GitHub Pages offers free hosting of static websites. You may have accessed this tutorial via a GitHub Pages site.
+
+[fn:4] A /Digital Object Identifier/ (DOI) is a unique and persistent way to refer to a document online, for example [[https://doi.org/10.1371/journal.pcbi.1009805]].
