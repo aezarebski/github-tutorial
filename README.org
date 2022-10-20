@@ -4,6 +4,44 @@
 #+latex_class: scrartcl
 #+html_head: <link id="stylesheet" rel="stylesheet" type="text/css" href="./stylesheet.css" />
 
+#+latex_header: \definecolor{base03}{HTML}{002b36}
+#+latex_header: \definecolor{base02}{HTML}{073642}
+#+latex_header: \definecolor{base01}{HTML}{586e75}
+#+latex_header: \definecolor{base00}{HTML}{657b83}
+#+latex_header: \definecolor{base0}{HTML}{839496}
+#+latex_header: \definecolor{base1}{HTML}{93a1a1}
+#+latex_header: \definecolor{base2}{HTML}{eee8d5}
+#+latex_header: \definecolor{base3}{HTML}{fdf6e3}
+#+latex_header: \definecolor{yellow}{HTML}{b58900}
+#+latex_header: \definecolor{orange}{HTML}{cb4b16}
+#+latex_header: \definecolor{red}{HTML}{dc322f}
+#+latex_header: \definecolor{magenta}{HTML}{d33682}
+#+latex_header: \definecolor{violet}{HTML}{6c71c4}
+#+latex_header: \definecolor{blue}{HTML}{268bd2}
+#+latex_header: \definecolor{cyan}{HTML}{2aa198}
+#+latex_header: \definecolor{green}{HTML}{859900}
+#+latex_header: \lstset{
+#+latex_header:   language=R,
+#+latex_header:   linewidth=0.95\textwidth,
+#+latex_header:   xleftmargin=0.05\textwidth,
+#+latex_header:   basicstyle=\small\ttfamily\color{base02},
+#+latex_header:   backgroundcolor=\color{base3},
+#+latex_header:   showspaces=false,
+#+latex_header:   showstringspaces=false,
+#+latex_header:   showtabs=false,
+#+latex_header:   frame=single,
+#+latex_header:   frameround=tttt,
+#+latex_header:   float=p,
+#+latex_header:   rulecolor=\color{base03},
+#+latex_header:   tabsize=2,
+#+latex_header:   captionpos=b,
+#+latex_header:   breaklines=true,
+#+latex_header:   breakatwhitespace=false,
+#+latex_header:   keywordstyle=\color{base02},
+#+latex_header:   commentstyle=\color{base02},
+#+latex_header:   stringstyle=\color{cyan}
+#+latex_header: }
+
 * Introduction
 
 Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will
