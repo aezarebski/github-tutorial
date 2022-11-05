@@ -69,6 +69,10 @@ Installing [[https://www.rstudio.com/][RStudio]] is probably the easiest way to 
 find an error in this document, or would like to suggest an improvement, please
 make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
 
+*IMPORTANT:* Note that while having a GitHub account is necessary for working
+along with this tutorial, the homework questions can all be completed without a
+GitHub account.
+
 ** Disclaimer
 
 These materials makes use of proprietary products and a simplified workflow in
@@ -806,6 +810,10 @@ Please ensure that in answering these questions, you use a format that is easy
 to read and supports hyperlinks. The ability to include chunks of code (or
 mono-spaced fonts) may be useful. You want to display the output of the [[https://en.wikipedia.org/wiki/Tree_(command)][=tree=
 command]]. I would recommend using something like RMarkdown.
+
+*IMPORTANT:* Please make sure to avoid submitting any identifying information
+beyond your student number when answering these questions. If you must, use your
+student number in place of your name.
 
 ** Question 1
 
