@@ -813,7 +813,7 @@ command]]. I would recommend using something like RMarkdown.
 
 *IMPORTANT:* Please make sure to avoid submitting any identifying information
 beyond your student number when answering these questions. If you must, use your
-student number in place of any your name.
+student number in place of your name.
 
 ** Question 1
 
