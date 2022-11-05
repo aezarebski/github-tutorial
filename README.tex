@@ -13,7 +13,9 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{float}
 \usepackage{listings}
+\usepackage[most]{tcolorbox}
 \definecolor{base03}{HTML}{002b36}
 \definecolor{base02}{HTML}{073642}
 \definecolor{base01}{HTML}{586e75}
@@ -340,7 +342,7 @@ We then need a script to carry out the analysis. Save the following code in a
 file called \texttt{make-plot.R}
 
 \lstset{language=r,label= ,caption= ,captionpos=b,numbers=none}
-\begin{lstlisting}
+\begin{lstlisting}[float,floatplacement=H,caption={The make-plot.R script demonstrates how to load data and create a simple figure displaying it.}]
 library(ggplot2)
 
 sods_data <- read.csv("stackoverflow-git-data.csv")
@@ -406,7 +408,7 @@ directory.
 Once you have done this, the R script should look like the following.
 
 \lstset{language=r,label= ,caption= ,captionpos=b,numbers=none}
-\begin{lstlisting}
+\begin{lstlisting}[float,floatplacement=H,caption={Using a sensible directory structure makes it easier to understand the contents of your project. Note that the original data is in a data directory and the output gets saved to a directory called out.}]
 sods_data <- read.csv("data/stackoverflow-git-data.csv")
 
 ...
@@ -499,7 +501,7 @@ contains this sort of information. Typically these will be written in markdown
 similar to the following.
 
 \lstset{language=sh,label= ,caption= ,captionpos=b,numbers=none}
-\begin{lstlisting}
+\begin{lstlisting}[float,floatplacement=H]
 This repository contains an analysis of git usage through time.
 
 To run this analysis use the following command:
@@ -520,7 +522,7 @@ software you have used. When working with R the \texttt{sessionInfo} command mak
 simple. Try adding the following to the end of the \texttt{make-plot.R} script.
 
 \lstset{language=r,label= ,caption= ,captionpos=b,numbers=none}
-\begin{lstlisting}
+\begin{lstlisting}[float,floatplacement=H]
 sink(file = "out/package-versions.txt")
 sessionInfo()
 sink()
@@ -530,6 +532,8 @@ The next time that you run this script, it will write a description of the
 version of R you used and the versions of all the loaded packages to the file
 \texttt{out/package-versions.txt}. Try running the script again to make sure this
 additional file was generated and contains something similar to the following.
+
+\newpage
 
 \begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Session information,xleftmargin=5mm,xrightmargin=5mm,fontsize=\small]
 R version 4.1.2 (2021-11-01)
@@ -609,7 +613,7 @@ GitHub).
 following
 
 \lstset{language=r,label= ,caption= ,captionpos=b,numbers=none}
-\begin{lstlisting}
+\begin{lstlisting}[float,floatplacement=H]
 g <- ggplot(
   data = sods_data,
   mapping = aes(x = year, y = percentage)) +
@@ -719,7 +723,7 @@ package versions. You can pipe this information to a text file (which is
 conventionally called \texttt{requirements.txt}) with the following command:
 
 \lstset{language=sh,label= ,caption= ,captionpos=b,numbers=none}
-\begin{lstlisting}
+\begin{lstlisting}[float,floatplacement=H]
 pip freeze > requirements.txt
 \end{lstlisting}
 
@@ -820,11 +824,13 @@ configuration. Some popular examples include
 Please ensure that in answering these questions, you use a format that is easy
 to read and supports hyperlinks. The ability to include chunks of code (or
 mono-spaced fonts) may be useful. You want to display the output of the \href{https://en.wikipedia.org/wiki/Tree\_(command)}{\texttt{tree}
-command}. I would recommend using something like RMarkdown.
+  command}. I would recommend using something like RMarkdown.
 
-\textbf{IMPORTANT:} Please make sure to avoid submitting any identifying information
-beyond your student number when answering these questions. If you must, use your
-student number in place of any your name.
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+  \textbf{IMPORTANT:} Please make sure to avoid submitting any identifying information
+  beyond your student number when answering these questions. If you must, use your
+  student number in place of your name.
+\end{tcolorbox}
 
 \subsection{Question 1}
 \label{sec:orgdeb729c}
