@@ -53,21 +53,22 @@
 
 * Introduction
 
-Welcome to /Git, GitHub and Reproducible Research/! In this tutorial we will
+Welcome to /Git, GitHub and Reproducible Research/! In this tutorial, we will
 look at ways git and GitHub can help you with your computational research,
-including how make it more reproducible. This is good for science as a whole as
-it means others can build upon your work, but it is also good for you to help
-you keep track of your projects. You will learn the fundamentals of git and gain
-practical experience in the use of GitHub. For those interested in learning more
-about version control, there is also a list of [[*Next steps and alternative solutions][additional resources]] and some
-[[*Homework][homework problems]] at the end to test your understanding.
+including how to make it more reproducible. This is good for science as a whole
+as it means others can build upon your work, but it is also good for you as an
+individual because it will help you in keeping track of your projects. You will
+learn the fundamentals of git and gain practical experience in the use of
+GitHub. For those interested in learning more about version control, there is
+also a list of [[*Next steps and alternative solutions][additional resources]] and some [[*Homework][homework problems]] at the end to
+test your understanding.
 
-Please read through the [[*Background material][background material]] first then follow along with the [[*Worked
- example][worked example]]. You do not need any special software installed (everything is
-done in the browser), however the worked example does make use of R and ggplot2.
-Installing [[https://www.rstudio.com/][RStudio]] is probably the easiest way to utilise these software. If you
-find an error in this document, or would like to suggest an improvement, please
-make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
+Please read through the [[*Background material][background material]] section first then follow along with
+the [[*Worked example][worked example]]. You do not need any special software installed (everything
+can be done in the browser), however the worked example does make use of R and
+ggplot2. Installing [[https://www.rstudio.com/][RStudio]] is probably the easiest way to utilise these
+software. If you find an error in this document, or would like to suggest an
+improvement, please make a note of this in the [[https://github.com/aezarebski/github-tutorial/issues/new/choose][issue tracker]] on GitHub.
 
 *IMPORTANT:* Note that while having a GitHub account is necessary for working
 along with this tutorial, the homework questions can all be completed without a
@@ -75,13 +76,13 @@ GitHub account.
 
 ** Disclaimer
 
-These materials makes use of proprietary products and a simplified workflow in
+These materials make use of proprietary products and a simplified workflow in
 order to emphasise the main concepts and to save on installation and
 configuration time. Some references will be given at the end to direct you to
-free and open source solutions and more sustainable workflows. The core ideas we
-will see are largely the same regardless of the software you use, so
+free and open source alternative and more sustainable workflows. The core ideas
+we will see are largely the same regardless of the software you use, so
 understanding this material should make it much easier to migrate to more
-sophisticated methods in the future, should the need for them arise.
+sophisticated methods in the future, should the need arise.
 
 * Background material
 
@@ -97,7 +98,7 @@ maintenance of things such as software, documents, and websites. These systems
 were developed to manage large software projects but are useful at many levels.
 For example, version control can help you avoid the following situation:
 =my-analysis.R=, =my-analysis-final.R=, =my-analysis-final-again.R=, and so on.
-Try coming back to that 3 months later when a reviewer asks you to re-run
+Try coming back to that 3 months[fn:5] later when a reviewer asks you to re-run
 something with a slight modification! Similar to the way in which an interactive
 debugger allows you to step through the evaluation of your program, version
 control allows you to step through the process in which the code was written.
@@ -105,25 +106,27 @@ You can think of it as an extreme version of undo/redo.
 
 In addition to helping you organise your files, a version control system (VCS)
 and its associated tooling can help the scientific community by making your
-research reproducible and open. For your computational research to be considered
-/reproducible,/ it needs to be described in such a way that others can replicate
-your results. For it to be /open/, the materials (code, data and sufficient
-documentation to use it) need to be available for others. Simply dumping all of
-your code into something like GitHub is not sufficient for your research to be
-considered reproducible.
+research reproducible and open. It is much easier to download the code from
+GitHub than trying to email the authors to get a copy. For your computational
+research to be considered /reproducible,/ it needs to be described in such a way
+that others can replicate your results. For it to be /open/, the materials
+(code, data and sufficient documentation to use it) need to be available for
+others. Simply dumping all of your code into something like GitHub is not
+sufficient for your research to be considered reproducible.
 
 ** Git
 
 Created in 2005 by Linus Torvalds[fn:2] to help with the development of the
 Linux kernel, git has become a fundamental tool for software development. In the
 2021 Stackoverflow Developer Survey over \(90\%\) of respondents used git; it is
-nearly synonymous with version control. If you intend to collaborate in the
+nearly synonymous with version control[fn:6]. If you intend to collaborate in the
 writing of substantial amounts of code, taking the time to learn how to use git
 is a good idea. This can be made easier by learning to use a [[*Client][GUI interface]] too.
 
 Working with git will be much easier once you are familiar with some of the
-terminology (there is a lot). Unless you are familiar with git already, you
-should at least skim these before continuing.
+terminology (there is a lot, but only some of it is really necessary.) Unless
+you are familiar with git already, you should at least skim these before
+continuing.
 
 *** Repository
 
@@ -140,8 +143,15 @@ called a /commit/. It is both a noun and a verb, you commit an edit and the
 version of saving a file. Each commit gets a unique identifier (called a
 /hash/). Sometimes we use "commit" to refer to the state of all the code after
 an edit. If you want to go back to the version of your code from three weeks
-ago, you just checkout the commit from that date and all the files will return
+ago, you just /checkout/ the commit from that date and all the files will return
 to the state they were in at that time.
+
+*** Checkout
+
+Checking out a commit (or a [[*Branch][branch]]) means putting the code back into the state
+it was when that commit was made (or the state of the branch.) This allows you
+to jump between the current version of your code and what it looked like 3
+months ago without needing to keep lots of intermediate files hanging around.
 
 *** Clone
 
@@ -149,22 +159,24 @@ When you make a copy of a [[*Repository][repository]] you are /cloning/ that rep
 resulting copy is referred to as a /clone/. Typically this will mean you have
 downloaded a copy from a platform such as GitHub. Note that downloading a ZIP
 file with the contents of a repository is not necessarily the same as cloning
-it, when you download the ZIP file you'll get the files, but you may not get the
+it. When you download the ZIP file you'll get the files, but you may not get the
 history of commits associated with them.
 
 *** Pull
 
 Suppose you [[*Clone][cloned]] a repository a while ago and you want to get a copy of all
-the [[*Commit][commits]] that have been made to the original repository since then. To get
-these commits you /pull/ them, which is a fancy way of saying updating your
-files. This is sometimes referred to as /fetching/. There are some subtle
-differences that you probably won't ever need.
+the [[*Commit][commits]] that have been made to the original repository since then, i.e. you
+want to update your code to reflect the most recent changes. To get these
+commits you /pull/ them, which is a fancy way of saying updating your files.
+This is sometimes referred to as /fetching/, there are some subtle differences
+between fetching and pulling but they go beyond the scope of this introduction.
 
 *** Push
 
-If you have [[*Commit][committed]] some changes to your [[*Clone][clone]] of a [[*Repository][repository]] and want the
-original repository to have these changes as well, you /push/ these changes.
-This is a fancy way of saying use your edits to update the original files.
+If you have [[*Commit][committed]] some changes to the [[*Clone][clone]] of a [[*Repository][repository]] on your machine
+and you want to send those changes to the original repository, you /push/ these
+changes. This is a fancy way of saying use your edits to update the original
+files.
 
 *** Branch
 
@@ -172,45 +184,46 @@ A /branch/ is similar to a [[*Clone][clone]] in that it is a copy of a [[*Reposi
 provides a more sophisticated way for people to work on their own version of
 code, without messing up the main copy. This is not particularly important
 unless you are collaborating with others on a project. It provides a safe way to
-experiment with your code without risking messing up your "good copy".
+experiment with your code without risking messing up your "good copy". By
+default, the main branch of a repository is called "master" or "main".
 
 *** Merge
 
-If someone has made some useful changes on their [[*Branch][branch]] the owner of the
-repository may decide to include their commits in the main copy. This process of
-including the changes on someone's branch is called /merging/ the changes. As
-with branches, this is likely only to be relevant if you are collaborating with
-others on your code.
+If someone has made some useful changes on their [[*Branch][branch]], the owner of the
+repository may decide they want to include those changes in the main copy. This
+process of including the changes on someone's branch is called /merging/ the
+changes. As with branches, this is likely only to be relevant if you are
+collaborating with others on your code. Merge conflicts arise when simultaneous
+changes to the same bit of code prevent the files to be merged seamlessly; they
+can be very painful.
 
 *** Fork
 
-When you make a copy of a repository that sits on your GitHub account. This is
-similar to, (but distinct from) [[*Clone][cloning]] and making a [[*Branch][branch]]. Forking a
-repository is an important part of contributing code to other peoples' projects
-when using GitHub, however the details of this are beyond the scope of this
-tutorial.
+You are /forking/ a repository when you make a copy of a repository that sits on
+your GitHub account. This is similar to, (but distinct from) [[*Clone][cloning]] or making a
+[[*Branch][branch]]. Forking a repository is an important part of contributing code to other
+peoples' projects when using GitHub, however the details of this are beyond the
+scope of this tutorial.
 
 *** Pull request (a.k.a. PR)
 
 A pull request is a way to request that the owner of a repository accepts the
-changes you are proposing. As with [[*Fork][forking]], the details are of this are beyond
-the scope of this tutorial.
+changes you are proposing. If the owner likes the changes you are requesting
+they may /merge/ them. As with [[*Fork][forking]], the details are of this are beyond the
+scope of this tutorial.
 
 *** Client
 
 A /git client/ is a program that "simplifies" the use of git by hiding some of
-the details and giving you GUI to click buttons on rather than typing mysterious
-text at the command line. We will use the GitHub website in this tutorial
-because it handles most of this for us and avoids any complicated installation.
-If you are going to be making substantial use of git, I would recommend getting
-a client and learning how to use it. [[https://desktop.github.com/][GitHub Desktop]] and [[https://www.sourcetreeapp.com/][Sourcetree]] are both free
-options and are developed by major companies so should have excellent
-documentation and be easy to use[fn:1].
+the details and giving you a GUI to click buttons on rather than typing
+mysterious text at the command line. We will use the GitHub website in this
+tutorial because it handles most of this for us and avoids any complicated
+installation. If you are going to be making substantial use of git, I would
+recommend getting a client and learning how to use it. [[https://desktop.github.com/][GitHub Desktop]] and
+[[https://www.sourcetreeapp.com/][Sourcetree]] are both free options, and are developed by major companies so should
+have excellent documentation and be easy to use[fn:1].
 
-If you are already using RStudio, you might be interested in the features it
-provides for version control. There is a [[https://resources.github.com/github-and-rstudio/][tutorial on using RStudio as a GitHub
-client]], but it requires some command line experience and for both RStudio and
-git to be installed on your machine.
+If you are already using RStudio, you might be interested in the features it provides for version control (when working on a project). There is a [[https://resources.github.com/github-and-rstudio/][tutorial on using RStudio as a GitHub client]], but it requires some command line experience and for both RStudio and git to be installed on your machine.
 
 ** GitHub
 
@@ -234,7 +247,8 @@ following steps to register an account:
 2. Fill in the forms to create an account. *ProTip:* Choose your username
    wisely!
 3. Verify that account by entering the access code GitHub sends to the email
-   address you registered with.
+   address you registered with. If you use a university email, you might get
+   some free stuff from GitHub if you register a student account.
 4. Verify that you can summon the *Command Palette* with =crtl k= for Windows
    and Linux and =command k= on a mac.
 5. The appearance and accessibility settings can be reached by searching for
@@ -267,18 +281,14 @@ of the resulting repository is available [[https://github.com/aezarebski/git-usa
 #+attr_html: :width 500px
 [[./git-usage-1.png]]
 
-We will start by looking at the [[*Code and data][code and data]] used in this analysis, then
-consider how one might [[*Organising the data and code][organise the files]]. Once we have the code in a sensible
-state we can [[*Uploading to GitHub][put it in a GitHub repository]] and add some finishing touches such
-as a [[*Adding a license][license]], some [[*Adding a README][documentation]], and some additional [[*Recording the session information][information about package
-versions]]. We then consider the situation in which [[*Branching and merging][changes]] need to be made by a
-collaborator.
+We will start by looking at the [[*Code and data][code and data]] used in this analysis, then consider how one might [[*Organising the data and code][organise the files]]. Once we have the code in a sensible state we can [[*Uploading to GitHub][put it in a GitHub repository]] and add some finishing touches such as a [[*Adding a license][license]], some [[*Adding a README][documentation]], and some additional [[*Recording the session information][information about package versions]]. We then consider the situation in which [[*Branching and merging][changes]] need to be made by a collaborator.
 
 ** Code and data
 
-Start by making a new directory called =git-usage= which will hold all our
-files. The data and the code that generated this figure are included below. This
-data should be saved in a called =stackoverflow-git-data.csv=.
+Start by creating the relevant files on your own machine to make sure they work.
+Make a new directory called =git-usage= to hold our files, will will refine this
+as we go along. The data and the code that generated this figure are included
+below. This data should be saved in a called =stackoverflow-git-data.csv=.
 
 #+begin_export latex
 \begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Git Usage,xleftmargin=5cm,xrightmargin=5cm]
@@ -368,10 +378,10 @@ someone to understand what each file is needed for. Follow the following steps
 1. Make a directory called =src= and move =make-plot.R= there.
 2. Make a directory called =data= and move =stackoverflow-git-data.csv= there.
 3. Make a directory called =out= which we will write results to.
-4. Fix the call to =read.csv= in =make-plot.R= so it can find the CSV since it
-   now lives in the =data= directory.
-5. Fix the calls to =ggsave= and =sink= so they write their output to the =out=
-   directory.
+4. Fix the call to =read.csv= in the script =make-plot.R= so it can find the
+   CSV, which now lives in the =data= directory.
+5. Fix the calls to =ggsave= and =sink= so that they write their output to the
+   =out= directory.
 
 Once you have done this, the R script should look like the following.
 
@@ -393,8 +403,9 @@ Once you have done this, the R script should look like the following.
 
 Once you have run the code (with =git-usage= as your working directory), the
 directory structure should look like the following. Note how the output files
-now appear in the =out= directory. If you are running the script from an R REPL,
-remember you can use =setwd= to specify the working directory.
+now appear in the =out= directory. If you are running the script from an R REPL
+(for example through RStudio), remember you can use =setwd= to specify the
+working directory.
 
 #+begin_export latex
 \begin{Verbatim}[frame=single,framerule=0.5mm,framesep=2mm,label=Git Usage,xleftmargin=3cm,xrightmargin=3cm]
@@ -427,29 +438,33 @@ do not already have a GitHub account, please follow the instructions [[*Setting 
 which describe how to make one. Once you have a GitHub account, you can follow
 the following steps to upload these files:
 
-1. Visit [[https://github.com/]] and create a new [[*Repository][repository]] by clicking *New*, you
-   will need to pick a name for the repository (I called mine =git-usage=.) The
-   default settings provided by GitHub are fine. Click *Create repository*.
+1. Visit [[https://github.com/]] and create a new [[*Repository][repository]] by clicking *New* (or
+   *Create repository*), you will need to pick a name for the repository (I
+   called mine =git-usage=.) There will be a couple of options but the default
+   settings provided by GitHub are fine. Click *Create repository*.
 2. We now need to [[*Commit][commit]] our files and [[*Push][push]] them to the remote repository.
    However, since we are doing this through GitHub, it is all combined into a
-   single step. Click *Add file* and then *creating a new file* to start the
-   process of adding the =src/make-plot.R= file.
+   single step. Click *Add file* (or *creating a new file*) to start the process
+   of adding the =src/make-plot.R= file.
    1. Ensure the name of the file is =git-usage/src/make-plot.R= (be careful
-      that you have the /path/ with the =\= correct.)
+      that you have the /path/ with the =/= correct.)
    2. Copy-and-paste the code in =make-plot.R= into the text box provided.
-   3. Click *Commit new file* button.
+   3. Click *Commit new file* button. Congratulations you have made your first
+      commit!🎊
    If you are struggling to make a new directory in GitHub, see the next
    section.
 3. Repeat this process with =data/stackoverflow-git-data.csv= and the output TXT
    file. In the case of the PNG image, =git-usage.png=, you will need to use
-   *Upload file* instead of *Create new file*.
+   *Upload file* instead of *Create new file*. To find these, click the *Add
+   file* button in the *Code* tab.
 
 ** Making directories via GitHub
 
 You cannot add an empty directory to a GitHub directory. If you want a new
 directory to be added, you need to commit a file to it. One convention for this
 is to make an empty file in the desired directory (often this will be a file
-called =.gitkeep=).
+called =.gitkeep=). To make this file use *Create new file* and just leave the
+text box empty.
 
 ** Adding a license
 
@@ -640,6 +655,10 @@ code, by committing the changes. However, this is tricky to do via the GitHub
 website for image files, so instead, delete the file and upload the modified
 one. At this point it might be interesting to move between the =main= branch and
 your new branch to see how the files change between the two.
+
+A word of warning, sometimes GitHub takes a while to update image files when
+displaying them via the website. If your figure file does not update
+immediately, it may take a few minutes.
 
 One motivation for branches is that you can make exploratory changes without
 risking messing up your code on the main branch. If you have a collaborator that
@@ -884,3 +903,9 @@ or would not be relevant to each rule.
 [fn:3] GitHub Pages offers free hosting of static websites. You may have accessed this tutorial via a GitHub Pages site.
 
 [fn:4] A /Digital Object Identifier/ (DOI) is a unique and persistent way to refer to a document online, for example [[https://doi.org/10.1371/journal.pcbi.1009805]].
+
+[fn:5] Eagleson's law states /Any code of your own that you haven't looked at
+for six or more months might as well have been written by someone else/.
+
+[fn:6] There are a lot of alternatives (for example [[https://subversion.apache.org/][Subversion]]) but git is the
+by far the most popular.
